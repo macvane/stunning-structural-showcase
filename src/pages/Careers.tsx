@@ -45,7 +45,7 @@ const Careers = () => {
       location: 'Boston, MA',
       type: 'Full-time',
       salaryRange: '$85,000 - $110,000/year',
-      description: 'Join our team as a Structural Engineer responsible for analyzing and designing structural systems for various projects. You'll work closely with senior engineers and contribute to innovative design solutions.'
+      description: 'Join our team as a Structural Engineer responsible for analyzing and designing structural systems for various projects. You\'ll work closely with senior engineers and contribute to innovative design solutions.'
     },
     {
       id: 'bim-specialist',
@@ -53,7 +53,7 @@ const Careers = () => {
       location: 'Remote',
       type: 'Full-time',
       salaryRange: '$75,000 - $95,000/year',
-      description: 'We're looking for a Building Information Modeling (BIM) Specialist to enhance our 3D modeling capabilities. You'll develop and maintain BIM standards, create detailed structural models, and coordinate with other disciplines.'
+      description: 'We\'re looking for a Building Information Modeling (BIM) Specialist to enhance our 3D modeling capabilities. You\'ll develop and maintain BIM standards, create detailed structural models, and coordinate with other disciplines.'
     },
     {
       id: 'project-engineer',
@@ -61,7 +61,7 @@ const Careers = () => {
       location: 'Chicago, IL',
       type: 'Full-time',
       salaryRange: '$70,000 - $90,000/year',
-      description: 'As a Project Engineer, you'll support project managers in delivering structural engineering projects, prepare calculations, develop drawings, and coordinate with clients and contractors.'
+      description: 'As a Project Engineer, you\'ll support project managers in delivering structural engineering projects, prepare calculations, develop drawings, and coordinate with clients and contractors.'
     },
     {
       id: 'structural-designer',
@@ -77,7 +77,7 @@ const Careers = () => {
       location: 'Multiple Locations',
       type: 'Part-time',
       salaryRange: '$25 - $30/hour',
-      description: 'Gain valuable experience as an Engineering Intern at Finite Element Designs. You'll learn from experienced engineers, assist with real projects, and develop practical skills in structural engineering.'
+      description: 'Gain valuable experience as an Engineering Intern at Finite Element Designs. You\'ll learn from experienced engineers, assist with real projects, and develop practical skills in structural engineering.'
     }
   ];
 
