@@ -54,10 +54,10 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				fe: {
-					"blue": "#235a7a",       // Main blue from logo
-					"teal": "#3d8ca3",       // Lighter blue accent
-					"light-teal": "#5cb8d1", // Lightest blue
-					"orange": "#e64e19",     // Accent orange (complementary to blue)
+					"blue": "#013F74",       // Main blue
+					"teal": "#175E7C",       // Complementary blue
+					"light-teal": "#1A8BB2", // Light accent blue
+					"orange": "#e64e19",     // Accent orange (kept for contrast)
 					"light-orange": "#ff6b3d", // Lighter accent orange
 					"dark-gray": "#333333",  // Dark gray for text
 					"light-gray": "#f5f5f5", // Light gray for backgrounds
