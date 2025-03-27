@@ -54,13 +54,13 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				fe: {
-					"blue": "#103d4d",
-					"teal": "#166f7a",
-					"light-teal": "#1a8a99",
-					"orange": "#ff5e18",
-					"light-orange": "#ff7b41",
-					"dark-gray": "#333333",
-					"light-gray": "#f5f5f5",
+					"blue": "#235a7a",       // Main blue from logo
+					"teal": "#3d8ca3",       // Lighter blue accent
+					"light-teal": "#5cb8d1", // Lightest blue
+					"orange": "#e64e19",     // Accent orange (complementary to blue)
+					"light-orange": "#ff6b3d", // Lighter accent orange
+					"dark-gray": "#333333",  // Dark gray for text
+					"light-gray": "#f5f5f5", // Light gray for backgrounds
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

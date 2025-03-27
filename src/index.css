@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 16 100% 54%;
+    --primary: 204 55% 31%; /* Blue from logo: #235a7a */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 184 76% 29%;
+    --secondary: 195 45% 44%; /* Teal blue: #3d8ca3 */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 184 67% 35%;
+    --accent: 195 56% 59%; /* Light teal: #5cb8d1 */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -57,16 +57,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 16 100% 54%;
+    --primary: 204 55% 31%; /* Blue from logo: #235a7a */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 184 76% 29%;
+    --secondary: 195 45% 44%; /* Teal blue: #3d8ca3 */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 184 67% 35%;
+    --accent: 195 56% 59%; /* Light teal: #5cb8d1 */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -110,7 +110,7 @@
   }
   
   .hero-gradient {
-    background: linear-gradient(to right, rgba(16, 61, 77, 0.9), rgba(22, 111, 122, 0.9));
+    background: linear-gradient(to right, rgba(35, 90, 122, 0.9), rgba(61, 140, 163, 0.9));
   }
 
   .section-padding {
@@ -122,7 +122,7 @@
   }
 
   .text-stroke {
-    -webkit-text-stroke: 1px rgba(255, 94, 24, 0.3);
+    -webkit-text-stroke: 1px rgba(230, 78, 25, 0.3);
   }
   
   .card-hover {
