@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CareersCta: React.FC = () => {
   return (
-    <section className="py-16 bg-fe-orange">
+    <section className="py-16 bg-fe-teal">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center reveal-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -15,7 +15,7 @@ const CareersCta: React.FC = () => {
           </p>
           <Link 
             to="/contact" 
-            className="button-primary bg-white text-fe-orange hover:bg-gray-100"
+            className="button-primary bg-white text-fe-blue hover:bg-gray-100"
           >
             Submit Your Resume
           </Link>

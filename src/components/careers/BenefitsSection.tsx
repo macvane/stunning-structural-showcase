@@ -36,7 +36,7 @@ const BenefitsSection: React.FC = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-          <span className="text-fe-orange font-medium">Employee Benefits</span>
+          <span className="text-fe-light-blue font-medium">Employee Benefits</span>
           <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
             Why You'll Love Working Here
           </h2>

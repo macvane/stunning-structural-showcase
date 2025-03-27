@@ -16,7 +16,7 @@ const CareerHero: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
-            Join Our <span className="text-fe-orange">Team</span>
+            Join Our <span className="text-fe-light-teal">Team</span>
           </h1>
           <p className="text-gray-200 text-lg max-w-2xl">
             Discover exciting career opportunities at Finite Element Designs and become part of a team dedicated to innovation, excellence, and making a positive impact through structural engineering.

@@ -15,7 +15,7 @@ const JoinUsSection: React.FC = () => {
           </div>
           
           <div className="reveal-on-scroll" style={{ animationDelay: '300ms' }}>
-            <span className="text-fe-orange font-medium">Why Join Us</span>
+            <span className="text-fe-light-blue font-medium">Why Join Us</span>
             <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
               Build Your Career with Us
             </h2>
@@ -32,23 +32,23 @@ const JoinUsSection: React.FC = () => {
               <h3 className="text-xl font-semibold text-fe-blue mb-4">What We Look For:</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-fe-light-teal mr-2 mt-1">●</span>
                   <span className="text-gray-700">Passion for structural engineering and design</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-fe-light-teal mr-2 mt-1">●</span>
                   <span className="text-gray-700">Creative problem-solving abilities</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-fe-light-teal mr-2 mt-1">●</span>
                   <span className="text-gray-700">Commitment to technical excellence</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-fe-light-teal mr-2 mt-1">●</span>
                   <span className="text-gray-700">Collaborative mindset and team orientation</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-fe-light-teal mr-2 mt-1">●</span>
                   <span className="text-gray-700">Drive for continuous learning and improvement</span>
                 </li>
               </ul>

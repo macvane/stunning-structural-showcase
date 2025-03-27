@@ -67,7 +67,7 @@ const JobOpeningsSection: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-          <span className="text-fe-orange font-medium">Open Positions</span>
+          <span className="text-fe-light-blue font-medium">Open Positions</span>
           <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
             Current Job Openings
           </h2>

@@ -7,7 +7,7 @@ const ApplicationProcessSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 reveal-on-scroll" style={{ animationDelay: '300ms' }}>
-            <span className="text-fe-orange font-medium">How to Apply</span>
+            <span className="text-fe-light-blue font-medium">How to Apply</span>
             <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
               Our Application Process
             </h2>

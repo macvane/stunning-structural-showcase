@@ -57,8 +57,8 @@ export default {
 					"blue": "#013F74",       // Main blue
 					"teal": "#175E7C",       // Complementary blue
 					"light-teal": "#1A8BB2", // Light accent blue
-					"orange": "#e64e19",     // Accent orange (kept for contrast)
-					"light-orange": "#ff6b3d", // Lighter accent orange
+					"light-blue": "#3A97D4", // Light blue (replacing orange)
+					"dark-blue": "#01254A",  // Darker shade of main blue
 					"dark-gray": "#333333",  // Dark gray for text
 					"light-gray": "#f5f5f5", // Light gray for backgrounds
 				},
