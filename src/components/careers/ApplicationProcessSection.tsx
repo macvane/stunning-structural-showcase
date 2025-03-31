@@ -57,7 +57,7 @@ const ApplicationProcessSection: React.FC = () => {
           
           <div className="order-1 lg:order-2 reveal-on-scroll">
             <img 
-              src="/lovable-uploads/aeb304dd-e51e-4c82-87d5-1d997a4858d0.png" 
+              src="/assets/engineering-meeting.jpg" 
               alt="Application process" 
               className="w-full h-auto rounded-lg shadow-xl" 
             />

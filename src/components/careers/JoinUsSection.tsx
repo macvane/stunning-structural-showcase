@@ -8,7 +8,7 @@ const JoinUsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="reveal-on-scroll">
             <img 
-              src="/lovable-uploads/850ee037-d3e1-429c-adb4-1eb8ac43182c.png" 
+              src="/assets/construction-team.jpg" 
               alt="Team collaboration" 
               className="w-full h-auto rounded-lg shadow-xl" 
             />

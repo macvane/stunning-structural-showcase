@@ -23,63 +23,63 @@ const Portfolio = () => {
       title: 'Azure Tower',
       category: 'Commercial',
       location: 'San Francisco, CA',
-      imageUrl: '/lovable-uploads/aeb304dd-e51e-4c82-87d5-1d997a4858d0.png'
+      imageUrl: '/assets/modern-skyscraper.jpg'
     },
     {
       id: '2',
       title: 'Riverfront Bridge',
       category: 'Infrastructure',
       location: 'Portland, OR',
-      imageUrl: '/lovable-uploads/850ee037-d3e1-429c-adb4-1eb8ac43182c.png'
+      imageUrl: '/assets/concrete-bridge.jpg'
     },
     {
       id: '3',
       title: 'Science Innovation Center',
       category: 'Institutional',
       location: 'Boston, MA',
-      imageUrl: '/lovable-uploads/d93315b4-7fa2-43fd-9a33-32cb25b60a8a.png'
+      imageUrl: '/assets/glass-building.jpg'
     },
     {
       id: '4',
       title: 'Skyline Residences',
       category: 'Residential',
       location: 'Chicago, IL',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png'
+      imageUrl: '/assets/residential-towers.jpg'
     },
     {
       id: '5',
       title: 'Manufacturing Facility',
       category: 'Industrial',
       location: 'Detroit, MI',
-      imageUrl: '/lovable-uploads/aeb304dd-e51e-4c82-87d5-1d997a4858d0.png'
+      imageUrl: '/assets/industrial-facility.jpg'
     },
     {
       id: '6',
       title: 'Harbor Point Tower',
       category: 'Commercial',
       location: 'New York, NY',
-      imageUrl: '/lovable-uploads/d93315b4-7fa2-43fd-9a33-32cb25b60a8a.png'
+      imageUrl: '/assets/commercial-building.jpg'
     },
     {
       id: '7',
       title: 'Ocean View Apartments',
       category: 'Residential',
       location: 'Miami, FL',
-      imageUrl: '/lovable-uploads/850ee037-d3e1-429c-adb4-1eb8ac43182c.png'
+      imageUrl: '/assets/apartment-complex.jpg'
     },
     {
       id: '8',
       title: 'Coastal Highway Bridge',
       category: 'Infrastructure',
       location: 'Seattle, WA',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png'
+      imageUrl: '/assets/highway-bridge.jpg'
     },
     {
       id: '9',
       title: 'University Research Center',
       category: 'Institutional',
       location: 'Austin, TX',
-      imageUrl: '/lovable-uploads/aeb304dd-e51e-4c82-87d5-1d997a4858d0.png'
+      imageUrl: '/assets/university-building.jpg'
     }
   ];
 

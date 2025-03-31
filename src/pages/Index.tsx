@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
@@ -59,8 +58,8 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-fe-blue opacity-80"></div>
           <img 
-            src="/lovable-uploads/d93315b4-7fa2-43fd-9a33-32cb25b60a8a.png" 
-            alt="Engineering structure" 
+            src="/assets/construction-hero.jpg" 
+            alt="Modern construction site" 
             className="w-full h-full object-cover" 
           />
         </div>
@@ -108,8 +107,8 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal-on-scroll">
               <img 
-                src="/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png" 
-                alt="CEO of Finite Element Designs" 
+                src="/assets/construction-engineer.jpg" 
+                alt="Construction engineer reviewing plans" 
                 className="w-full h-auto rounded-lg shadow-xl" 
               />
             </div>
@@ -203,13 +202,13 @@ const Index = () => {
             <div className="reveal-on-scroll">
               <Link to="/portfolio/1" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="/lovable-uploads/aeb304dd-e51e-4c82-87d5-1d997a4858d0.png" 
+                  src="/assets/modern-skyscraper.jpg" 
                   alt="Commercial high-rise project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <span className="text-sm font-medium uppercase tracking-wider text-fe-orange">Commercial</span>
+                  <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Commercial</span>
                   <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Azure Tower</h3>
                   <p className="text-sm text-gray-200">San Francisco, CA</p>
                 </div>
@@ -219,13 +218,13 @@ const Index = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '200ms' }}>
               <Link to="/portfolio/2" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="/lovable-uploads/850ee037-d3e1-429c-adb4-1eb8ac43182c.png" 
+                  src="/assets/concrete-bridge.jpg" 
                   alt="Bridge engineering project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <span className="text-sm font-medium uppercase tracking-wider text-fe-orange">Infrastructure</span>
+                  <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Infrastructure</span>
                   <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Riverfront Bridge</h3>
                   <p className="text-sm text-gray-200">Portland, OR</p>
                 </div>
@@ -235,13 +234,13 @@ const Index = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '400ms' }}>
               <Link to="/portfolio/3" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="/lovable-uploads/d93315b4-7fa2-43fd-9a33-32cb25b60a8a.png" 
+                  src="/assets/glass-building.jpg" 
                   alt="Institutional building project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <span className="text-sm font-medium uppercase tracking-wider text-fe-orange">Institutional</span>
+                  <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Institutional</span>
                   <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Science Innovation Center</h3>
                   <p className="text-sm text-gray-200">Boston, MA</p>
                 </div>
