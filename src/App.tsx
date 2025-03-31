@@ -12,6 +12,15 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+// Import service pages
+import CivilStructuralEngineering from "./pages/services/CivilStructuralEngineering";
+import StructuralTraining from "./pages/services/StructuralTraining";
+import StructuralConsultancy from "./pages/services/StructuralConsultancy";
+import ProjectManagement from "./pages/services/ProjectManagement";
+import SteelFabrication from "./pages/services/SteelFabrication";
+import LargeFormatPrinting from "./pages/services/LargeFormatPrinting";
+import DesignBuild from "./pages/services/DesignBuild";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +36,16 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Service routes */}
+          <Route path="/services/civil-structural-engineering" element={<CivilStructuralEngineering />} />
+          <Route path="/services/structural-training" element={<StructuralTraining />} />
+          <Route path="/services/structural-consultancy" element={<StructuralConsultancy />} />
+          <Route path="/services/project-management" element={<ProjectManagement />} />
+          <Route path="/services/steel-fabrication" element={<SteelFabrication />} />
+          <Route path="/services/large-format-printing" element={<LargeFormatPrinting />} />
+          <Route path="/services/design-build" element={<DesignBuild />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

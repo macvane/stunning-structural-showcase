@@ -2,21 +2,38 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import AnimatedLogo from './ui/AnimatedLogo';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
   // Navigation links
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'About', path: '/about' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
+  ];
+
+  // Services links
+  const serviceLinks = [
+    { name: 'Civil & Structural Engineering', path: '/services/civil-structural-engineering' },
+    { name: 'Structural Engineering Training', path: '/services/structural-training' },
+    { name: 'Structural Engineering Consultancy', path: '/services/structural-consultancy' },
+    { name: 'Project Management', path: '/services/project-management' },
+    { name: 'Steel Fabrication', path: '/services/steel-fabrication' },
+    { name: 'Large Format Printing', path: '/services/large-format-printing' },
+    { name: 'Design Build', path: '/services/design-build' },
   ];
 
   // Check if we've scrolled down
@@ -37,6 +54,9 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
+
+  // Check if current location is a services page
+  const isServicesPage = location.pathname.startsWith('/services');
 
   return (
     <header 
@@ -71,6 +91,43 @@ const Navbar: React.FC = () => {
                 )}
               </Link>
             ))}
+            
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger 
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-fe-orange focus:outline-none flex items-center ${
+                  isServicesPage
+                    ? 'text-fe-orange' 
+                    : isScrolled ? 'text-fe-dark-gray' : 'text-white'
+                }`}
+              >
+                Services <ChevronDown className="ml-1 h-4 w-4" />
+                {isServicesPage && (
+                  <span className="absolute bottom-0 left-0 h-0.5 w-full bg-fe-orange transform transition-transform duration-300" />
+                )}
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-white p-2 rounded-md shadow-lg w-72 z-50">
+                {serviceLinks.map((service) => (
+                  <DropdownMenuItem key={service.path} className="focus:bg-gray-100 rounded-md">
+                    <Link 
+                      to={service.path} 
+                      className="w-full py-2 px-1 block text-fe-dark-gray hover:text-fe-orange"
+                    >
+                      {service.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuItem className="focus:bg-gray-100 rounded-md">
+                  <Link 
+                    to="/services" 
+                    className="w-full py-2 px-1 block text-fe-orange font-medium"
+                  >
+                    View All Services
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <Link 
               to="/contact" 
               className="ml-2 button-primary text-sm"
@@ -110,6 +167,37 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Mobile Services Dropdown */}
+              <div className="relative w-full flex flex-col items-center">
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className={`text-xl font-medium flex items-center ${isServicesPage ? 'text-fe-orange' : 'text-white'}`}
+                >
+                  Services <ChevronDown className={`ml-1 h-5 w-5 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isServicesOpen && (
+                  <div className="mt-4 w-full flex flex-col items-center space-y-4">
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.path}
+                        to={service.path}
+                        className="text-lg text-gray-200 hover:text-fe-orange"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                    <Link
+                      to="/services"
+                      className="text-lg text-fe-orange font-medium"
+                    >
+                      View All Services
+                    </Link>
+                  </div>
+                )}
+              </div>
+              
               <Link 
                 to="/contact" 
                 className="mt-4 button-primary"
