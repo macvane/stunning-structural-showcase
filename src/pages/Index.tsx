@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
@@ -58,7 +59,7 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-fe-blue opacity-80"></div>
           <img 
-            src="/assets/construction-hero.jpg" 
+            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1170&auto=format&fit=crop" 
             alt="Modern construction site" 
             className="w-full h-full object-cover" 
           />
@@ -107,7 +108,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal-on-scroll">
               <img 
-                src="/assets/construction-engineer.jpg" 
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1170&auto=format&fit=crop" 
                 alt="Construction engineer reviewing plans" 
                 className="w-full h-auto rounded-lg shadow-xl" 
               />
@@ -202,7 +203,7 @@ const Index = () => {
             <div className="reveal-on-scroll">
               <Link to="/portfolio/1" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="/assets/modern-skyscraper.jpg" 
+                  src="https://images.unsplash.com/photo-1486192133801-f346d66b986e?q=80&w=1170&auto=format&fit=crop" 
                   alt="Commercial high-rise project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
@@ -218,7 +219,7 @@ const Index = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '200ms' }}>
               <Link to="/portfolio/2" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="/assets/concrete-bridge.jpg" 
+                  src="https://images.unsplash.com/photo-1545296758-4d9ac7602a8f?q=80&w=1170&auto=format&fit=crop" 
                   alt="Bridge engineering project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
@@ -234,7 +235,7 @@ const Index = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '400ms' }}>
               <Link to="/portfolio/3" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="/assets/glass-building.jpg" 
+                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1171&auto=format&fit=crop" 
                   alt="Institutional building project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
