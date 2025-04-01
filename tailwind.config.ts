@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -57,10 +56,11 @@ export default {
 					"blue": "#013F74",       // Main blue
 					"teal": "#175E7C",       // Complementary blue
 					"light-teal": "#1A8BB2", // Light accent blue
-					"light-blue": "#3A97D4", // Light blue (replacing orange)
+					"light-blue": "#3A97D4", // Light blue
 					"dark-blue": "#01254A",  // Darker shade of main blue
 					"dark-gray": "#333333",  // Dark gray for text
 					"light-gray": "#f5f5f5", // Light gray for backgrounds
+					"orange": "#FF6B00",     // Adding the orange color
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
