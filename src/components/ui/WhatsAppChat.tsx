@@ -4,7 +4,7 @@ import { MessageCircle, X } from 'lucide-react';
 
 const WhatsAppChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = '+254700000000'; // Replace with your actual WhatsApp number
+  const phoneNumber = '+254772041005'; // Updated phone number
   
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -15,7 +15,7 @@ const WhatsAppChat: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 z-50">
+    <div className="fixed bottom-4 right-4 z-50"> {/* Changed from left-4 to right-4 */}
       {isOpen && (
         <div className="bg-white rounded-lg shadow-lg p-4 mb-3 w-72 animate-fade-in">
           <div className="flex justify-between items-center mb-3">
@@ -42,7 +42,7 @@ const WhatsAppChat: React.FC = () => {
       
       <button
         onClick={toggleChat}
-        className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center"
+        className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center whatsapp-button-pulse"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle size={24} />
