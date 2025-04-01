@@ -1,60 +1,10 @@
 
 import React from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
-import { Building2, Building, Ruler, Droplets, Construction, AreaChart } from 'lucide-react';
+import { Building2, FileDigit } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CivilStructuralEngineering = () => {
-  const heroContent = {
-    title: 'Civil & Structural Engineering',
-    subtitle: 'Delivering robust and innovative engineering solutions for a sustainable future.',
-    imageSrc: '/assets/civil-engineering-hero.jpg',
-    imageAlt: 'Civil and Structural Engineering Services',
-  };
-
-  const servicesOffered = [
-    {
-      title: 'Structural Design & Analysis',
-      description: 'Comprehensive structural design and analysis services for residential, commercial, and industrial buildings.',
-      icon: <Building2 className="h-8 w-8 text-fe-teal" />,
-    },
-    {
-      title: 'Infrastructure Development',
-      description: 'Planning, design, and construction management of essential infrastructure projects, including roads, bridges, and water systems.',
-      icon: <Building className="h-8 w-8 text-fe-teal" />,
-    },
-    {
-      title: 'Sustainable Design Solutions',
-      description: 'Incorporating sustainable practices and materials into designs to minimize environmental impact and enhance energy efficiency.',
-      icon: <Ruler className="h-8 w-8 text-fe-teal" />,
-    },
-    {
-      title: 'Water Resources Engineering',
-      description: 'Expertise in water supply, wastewater treatment, and stormwater management to ensure efficient and sustainable water usage.',
-      icon: <Droplets className="h-8 w-8 text-fe-teal" />,
-    },
-    {
-      title: 'Construction Management',
-      description: 'Overseeing construction projects from start to finish, ensuring quality, safety, and adherence to timelines and budgets.',
-      icon: <Construction className="h-8 w-8 text-fe-teal" />,
-    },
-    {
-      title: 'Geotechnical Engineering',
-      description: 'Analyzing soil and rock properties to provide recommendations for foundation design, slope stability, and earthwork construction.',
-      icon: <AreaChart className="h-8 w-8 text-fe-teal" />,
-    },
-  ];
-
-  const whyChooseUs = {
-    title: 'Why Choose Our Civil & Structural Engineering Services?',
-    reasons: [
-      'Experienced team of licensed professional engineers',
-      'Commitment to sustainable and innovative design practices',
-      'Proven track record of successful project delivery',
-      'Utilization of advanced technology and software',
-      'Client-focused approach with personalized solutions',
-    ],
-  };
-
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -71,74 +21,94 @@ const CivilStructuralEngineering = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
-              {heroContent.title}
+              Civil & <span className="text-fe-orange">Structural Engineering</span>
             </h1>
             <p className="text-gray-200 text-lg max-w-2xl">
-              {heroContent.subtitle}
+              Our comprehensive structural engineering solutions ensure the safety, efficiency, and sustainability of your buildings and infrastructure projects.
             </p>
           </div>
         </div>
       </section>
-
-      {/* Services Offered Section */}
+      
+      {/* Main Content */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-            <span className="text-fe-orange font-medium">Our Expertise</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
-              Comprehensive Services
-            </h2>
-            <p className="text-gray-700">
-              We offer a wide range of civil and structural engineering services to meet the diverse needs of our clients.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {servicesOffered.map((service, index) => (
-              <div 
-                key={index} 
-                className="bg-gray-50 p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl reveal-on-scroll"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="bg-fe-blue bg-opacity-10 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-medium text-fe-blue mb-3">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
+                <Building2 className="h-12 w-12 text-fe-teal" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="reveal-on-scroll">
-              <img 
-                src="/assets/civil-engineering-team.jpg"
-                alt="Civil Engineering Team" 
-                className="w-full h-auto rounded-lg shadow-xl" 
-              />
-            </div>
-            
-            <div className="reveal-on-scroll" style={{ animationDelay: '300ms' }}>
-              <span className="text-fe-orange font-medium">{whyChooseUs.title}</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
-                {whyChooseUs.title}
-              </h2>
-              
-              <ul className="list-disc list-inside text-gray-700 space-y-3">
-                {whyChooseUs.reasons.map((reason, index) => (
-                  <li key={index}>{reason}</li>
-                ))}
+              <h2 className="text-3xl font-bold text-fe-blue mb-6">Comprehensive Structural Solutions</h2>
+              <p className="text-gray-700 mb-6">
+                Our civil and structural engineering services cover all aspects of building engineering, from conceptual design through construction documentation. We provide innovative and cost-effective solutions for buildings of all types and sizes.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Steel, concrete, wood, and masonry design</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Multi-story building frameworks</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Foundation systems engineering</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Lateral force-resisting systems</span>
+                </li>
               </ul>
             </div>
+            <div className="rounded-lg overflow-hidden shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1170&auto=format&fit=crop" 
+                alt="Civil Engineering Project" 
+                className="w-full h-full object-cover" 
+              />
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense">
+            <div className="lg:col-start-2">
+              <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
+                <FileDigit className="h-12 w-12 text-fe-teal" />
+              </div>
+              <h2 className="text-3xl font-bold text-fe-blue mb-6">Advanced Analysis Capabilities</h2>
+              <p className="text-gray-700 mb-6">
+                We utilize state-of-the-art software and engineering principles to analyze complex structures and ensure they meet all safety and performance requirements.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Non-linear structural analysis</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Dynamic response simulation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Seismic performance evaluation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Construction phase engineering support</span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-xl lg:col-start-1">
+              <img 
+                src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=1170&auto=format&fit=crop" 
+                alt="Structural Analysis" 
+                className="w-full h-full object-cover" 
+              />
+            </div>
           </div>
         </div>
       </section>
-
+      
       {/* CTA Section */}
       <section className="py-16 bg-fe-teal relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -151,19 +121,19 @@ const CivilStructuralEngineering = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center reveal-on-scroll">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Build a Sustainable Future Together?
+              Ready to Start Your Engineering Project?
             </h2>
             <p className="text-gray-100 text-lg mb-8 max-w-2xl mx-auto">
-              Contact us today to discuss your civil and structural engineering needs. Let's collaborate to create innovative and sustainable solutions.
+              Contact our team today to discuss how our civil and structural engineering services can help bring your project to life.
             </p>
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="button-primary bg-white text-fe-blue hover:bg-gray-100"
             >
-              Get in Touch
-            </a>
+              Request a Consultation
+            </Link>
           </div>
         </div>
       </section>

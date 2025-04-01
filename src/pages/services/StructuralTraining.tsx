@@ -1,91 +1,10 @@
 
 import React from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
-import { BookOpen, Users, PenTool, BarChart4, Award, BookCheck, Building, Ruler, Wand2, AreaChart } from 'lucide-react';
+import { Microscope, Ruler } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const StructuralTraining = () => {
-  // Training programs data
-  const trainingPrograms = [
-    {
-      id: 'structural-analysis',
-      title: 'Structural Analysis Fundamentals',
-      description: 'A comprehensive introduction to structural analysis principles, covering topics such as load tracing, stress analysis, and structural behavior.',
-      icon: <BookOpen className="h-8 w-8 text-fe-teal" />,
-      modules: [
-        'Introduction to Structural Engineering',
-        'Load Tracing and Distribution',
-        'Stress and Strain Analysis',
-        'Structural Behavior under Load',
-        'Analysis of Determinate Structures'
-      ]
-    },
-    {
-      id: 'steel-design',
-      title: 'Steel Design Essentials',
-      description: 'An in-depth exploration of steel design concepts, including material properties, connection design, and member sizing according to industry standards.',
-      icon: <PenTool className="h-8 w-8 text-fe-teal" />,
-      modules: [
-        'Steel Material Properties',
-        'Tension Member Design',
-        'Compression Member Design',
-        'Beam Design',
-        'Connection Design'
-      ]
-    },
-    {
-      id: 'concrete-design',
-      title: 'Reinforced Concrete Design',
-      description: 'A detailed study of reinforced concrete design principles, covering topics such as flexural design, shear design, and detailing requirements.',
-      icon: <Building className="h-8 w-8 text-fe-teal" />,
-      modules: [
-        'Concrete Material Properties',
-        'Flexural Design of Beams',
-        'Shear Design of Beams',
-        'Column Design',
-        'Detailing Requirements'
-      ]
-    },
-    {
-      id: 'bim-for-structures',
-      title: 'BIM for Structural Engineers',
-      description: 'A practical guide to using Building Information Modeling (BIM) software for structural design and analysis, enhancing collaboration and project coordination.',
-      icon: <Ruler className="h-8 w-8 text-fe-teal" />,
-      modules: [
-        'Introduction to BIM',
-        'Structural Modeling in BIM Software',
-        'Collaboration and Coordination',
-        'Analysis and Design Integration',
-        'Documentation and Reporting'
-      ]
-    },
-    {
-      id: 'seismic-design',
-      title: 'Seismic Design Principles',
-      description: 'An overview of seismic design considerations, including earthquake loading, structural dynamics, and performance-based design approaches.',
-      icon: <Wand2 className="h-8 w-8 text-fe-teal" />,
-      modules: [
-        'Introduction to Earthquakes',
-        'Seismic Loading',
-        'Structural Dynamics',
-        'Performance-Based Design',
-        'Seismic Detailing'
-      ]
-    },
-    {
-      id: 'advanced-analysis',
-      title: 'Advanced Structural Analysis',
-      description: 'An exploration of advanced analysis techniques, such as finite element analysis and non-linear analysis, for complex structural systems.',
-      icon: <AreaChart className="h-8 w-8 text-fe-teal" />,
-      modules: [
-        'Introduction to Finite Element Analysis',
-        'Non-Linear Analysis',
-        'Dynamic Analysis',
-        'Buckling Analysis',
-        'Advanced Modeling Techniques'
-      ]
-    }
-  ];
-
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -105,80 +24,86 @@ const StructuralTraining = () => {
               Structural Engineering <span className="text-fe-orange">Training</span>
             </h1>
             <p className="text-gray-200 text-lg max-w-2xl">
-              Enhance your skills and knowledge in structural engineering with our comprehensive training programs, designed for professionals and students alike.
+              Comprehensive training programs designed to develop professional expertise in structural engineering principles and practices.
             </p>
           </div>
         </div>
       </section>
       
-      {/* Training Programs Section */}
+      {/* Main Content */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-            <span className="text-fe-orange font-medium">Our Programs</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
-              Comprehensive Training Modules
-            </h2>
-            <p className="text-gray-700">
-              We offer a variety of training programs to help you master structural engineering principles and practices, from fundamental concepts to advanced techniques.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {trainingPrograms.map((program, index) => (
-              <div 
-                key={program.id} 
-                className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl reveal-on-scroll"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="bg-fe-blue bg-opacity-10 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                  {program.icon}
-                </div>
-                <h3 className="text-xl font-medium text-fe-blue mb-3">{program.title}</h3>
-                <p className="text-gray-600 mb-4">{program.description}</p>
-                
-                <h4 className="text-lg font-semibold text-gray-700 mb-2">Modules:</h4>
-                <ul className="list-disc list-inside text-gray-600">
-                  {program.modules.map((module, i) => (
-                    <li key={i} className="mb-1">{module}</li>
-                  ))}
-                </ul>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
+                <Microscope className="h-12 w-12 text-fe-teal" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Benefits Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12 reveal-on-scroll">
-            <span className="text-fe-orange font-medium">Why Choose Us</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
-              Benefits of Our Training Programs
-            </h2>
-            <p className="text-gray-700">
-              Gain a competitive edge in the structural engineering field with our expert-led training programs, designed to enhance your skills and career prospects.
-            </p>
+              <h2 className="text-3xl font-bold text-fe-blue mb-6">Professional Development Programs</h2>
+              <p className="text-gray-700 mb-6">
+                Our training programs are designed for engineers at all career stages, from recent graduates to seasoned professionals looking to update their skills with the latest industry developments.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Structural analysis software training</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Building code compliance workshops</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Advanced design methodologies</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Professional certification preparation</span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-xl">
+              <img 
+                src="https://images.unsplash.com/photo-1544531585-9847b68c8c86?q=80&w=1170&auto=format&fit=crop" 
+                alt="Engineering Training" 
+                className="w-full h-full object-cover" 
+              />
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl reveal-on-scroll">
-              <Award className="h-8 w-8 text-fe-teal mb-4" />
-              <h3 className="text-xl font-medium text-fe-blue mb-3">Industry-Recognized Certification</h3>
-              <p className="text-gray-600">Earn a certification that validates your expertise and enhances your professional credibility.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense">
+            <div className="lg:col-start-2">
+              <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
+                <Ruler className="h-12 w-12 text-fe-teal" />
+              </div>
+              <h2 className="text-3xl font-bold text-fe-blue mb-6">Customized Corporate Training</h2>
+              <p className="text-gray-700 mb-6">
+                We offer tailored training programs for engineering firms, construction companies, and institutional clients seeking to enhance their team's technical capabilities.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">On-site workshops and seminars</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Project-specific training modules</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Team skill assessment and development</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-fe-orange mr-2 mt-1">●</span>
+                  <span className="text-gray-700">Continuing education programs</span>
+                </li>
+              </ul>
             </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl reveal-on-scroll" style={{ animationDelay: '100ms' }}>
-              <Users className="h-8 w-8 text-fe-teal mb-4" />
-              <h3 className="text-xl font-medium text-fe-blue mb-3">Expert Instructors</h3>
-              <p className="text-gray-600">Learn from experienced structural engineers and industry professionals who are passionate about teaching.</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl reveal-on-scroll" style={{ animationDelay: '200ms' }}>
-              <BookCheck className="h-8 w-8 text-fe-teal mb-4" />
-              <h3 className="text-xl font-medium text-fe-blue mb-3">Comprehensive Curriculum</h3>
-              <p className="text-gray-600">Our training programs cover a wide range of topics, ensuring you gain a thorough understanding of structural engineering principles.</p>
+            <div className="rounded-lg overflow-hidden shadow-xl lg:col-start-1">
+              <img 
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1170&auto=format&fit=crop" 
+                alt="Corporate Training" 
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
         </div>
@@ -196,19 +121,19 @@ const StructuralTraining = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center reveal-on-scroll">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Elevate Your Skills?
+              Enhance Your Engineering Skills Today
             </h2>
             <p className="text-gray-100 text-lg mb-8 max-w-2xl mx-auto">
-              Enroll in our structural engineering training programs today and take your career to the next level. Contact us to learn more about our course offerings and enrollment process.
+              Whether you're an individual professional or representing an organization, our training programs can help you achieve your career development goals.
             </p>
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="button-primary bg-white text-fe-blue hover:bg-gray-100"
             >
-              Explore Training Programs
-            </a>
+              Inquire About Training Programs
+            </Link>
           </div>
         </div>
       </section>
