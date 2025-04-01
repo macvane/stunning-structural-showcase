@@ -130,7 +130,7 @@
   }
   
   .button-primary {
-    @apply bg-fe-blue text-white px-6 py-3 rounded-md transition-all duration-300 hover:bg-fe-teal focus:outline-none focus:ring-2 focus:ring-fe-blue focus:ring-opacity-50 shadow-md hover:shadow-lg;
+    @apply bg-fe-teal text-white px-6 py-3 rounded-md transition-all duration-300 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-fe-teal focus:ring-opacity-50 shadow-md hover:shadow-lg;
   }
   
   .button-secondary {

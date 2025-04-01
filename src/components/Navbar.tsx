@@ -16,9 +16,10 @@ const Navbar: React.FC = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
-  // Navigation links
+  // Navigation links - reordered to put Services after Home
   const navLinks = [
     { name: 'Home', path: '/' },
+    // Services dropdown is now handled separately and positioned after Home
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'About', path: '/about' },
     { name: 'Careers', path: '/careers' },
@@ -75,35 +76,33 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-fe-orange ${
-                  location.pathname === link.path 
-                    ? 'text-fe-orange' 
-                    : isScrolled ? 'text-fe-dark-gray' : 'text-white'
-                }`}
-              >
-                {link.name}
-                {location.pathname === link.path && (
-                  <span className="absolute bottom-0 left-0 h-0.5 w-full bg-fe-orange transform transition-transform duration-300" />
-                )}
-              </Link>
-            ))}
+            {/* Home link */}
+            <Link
+              to="/"
+              className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-fe-teal ${
+                location.pathname === "/" 
+                  ? 'text-fe-teal' 
+                  : isScrolled ? 'text-fe-dark-gray' : 'text-white'
+              }`}
+            >
+              Home
+              {location.pathname === "/" && (
+                <span className="absolute bottom-0 left-0 h-0.5 w-full bg-fe-teal transform transition-transform duration-300" />
+              )}
+            </Link>
             
-            {/* Services Dropdown */}
+            {/* Services Dropdown - positioned after Home */}
             <DropdownMenu>
               <DropdownMenuTrigger 
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-fe-orange focus:outline-none flex items-center ${
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-fe-teal focus:outline-none flex items-center ${
                   isServicesPage
-                    ? 'text-fe-orange' 
+                    ? 'text-fe-teal' 
                     : isScrolled ? 'text-fe-dark-gray' : 'text-white'
                 }`}
               >
                 Services <ChevronDown className="ml-1 h-4 w-4" />
                 {isServicesPage && (
-                  <span className="absolute bottom-0 left-0 h-0.5 w-full bg-fe-orange transform transition-transform duration-300" />
+                  <span className="absolute bottom-0 left-0 h-0.5 w-full bg-fe-teal transform transition-transform duration-300" />
                 )}
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-white p-2 rounded-md shadow-lg w-72 z-50">
@@ -111,7 +110,7 @@ const Navbar: React.FC = () => {
                   <DropdownMenuItem key={service.path} className="focus:bg-gray-100 rounded-md">
                     <Link 
                       to={service.path} 
-                      className="w-full py-2 px-1 block text-fe-dark-gray hover:text-fe-orange"
+                      className="w-full py-2 px-1 block text-fe-dark-gray hover:text-fe-teal"
                     >
                       {service.name}
                     </Link>
@@ -120,13 +119,31 @@ const Navbar: React.FC = () => {
                 <DropdownMenuItem className="focus:bg-gray-100 rounded-md">
                   <Link 
                     to="/services" 
-                    className="w-full py-2 px-1 block text-fe-orange font-medium"
+                    className="w-full py-2 px-1 block text-fe-teal font-medium"
                   >
                     View All Services
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            
+            {/* Remaining navigation links */}
+            {navLinks.slice(1).map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-fe-teal ${
+                  location.pathname === link.path 
+                    ? 'text-fe-teal' 
+                    : isScrolled ? 'text-fe-dark-gray' : 'text-white'
+                }`}
+              >
+                {link.name}
+                {location.pathname === link.path && (
+                  <span className="absolute bottom-0 left-0 h-0.5 w-full bg-fe-teal transform transition-transform duration-300" />
+                )}
+              </Link>
+            ))}
             
             <Link 
               to="/contact" 
@@ -156,23 +173,21 @@ const Navbar: React.FC = () => {
             }`}
           >
             <nav className="flex flex-col items-center space-y-6 py-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-xl font-medium ${
-                    location.pathname === link.path ? 'text-fe-orange' : 'text-white'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {/* Home link */}
+              <Link
+                to="/"
+                className={`text-xl font-medium ${
+                  location.pathname === "/" ? 'text-fe-teal' : 'text-white'
+                }`}
+              >
+                Home
+              </Link>
               
               {/* Mobile Services Dropdown */}
               <div className="relative w-full flex flex-col items-center">
                 <button
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className={`text-xl font-medium flex items-center ${isServicesPage ? 'text-fe-orange' : 'text-white'}`}
+                  className={`text-xl font-medium flex items-center ${isServicesPage ? 'text-fe-teal' : 'text-white'}`}
                 >
                   Services <ChevronDown className={`ml-1 h-5 w-5 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -183,20 +198,33 @@ const Navbar: React.FC = () => {
                       <Link
                         key={service.path}
                         to={service.path}
-                        className="text-lg text-gray-200 hover:text-fe-orange"
+                        className="text-lg text-gray-200 hover:text-fe-teal"
                       >
                         {service.name}
                       </Link>
                     ))}
                     <Link
                       to="/services"
-                      className="text-lg text-fe-orange font-medium"
+                      className="text-lg text-fe-teal font-medium"
                     >
                       View All Services
                     </Link>
                   </div>
                 )}
               </div>
+              
+              {/* Remaining nav links */}
+              {navLinks.slice(1).map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-xl font-medium ${
+                    location.pathname === link.path ? 'text-fe-teal' : 'text-white'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
               
               <Link 
                 to="/contact" 

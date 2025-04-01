@@ -1,10 +1,56 @@
 
 import React from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
-import { Printer, FileDigit } from 'lucide-react';
+import { Printer, FileDigit, ClockIcon, Sparkles, RefreshCw, Users, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const LargeFormatPrinting = () => {
+  // Services
+  const services = [
+    {
+      title: "Precision and Detail",
+      description: "Our Prograft Tx 3000 large format printer delivers exceptional precision and detail, ensuring that your architectural and structural drawings are reproduced with utmost clarity and accuracy. From intricate design elements to fine lines and annotations, our printing capabilities capture every detail with precision.",
+      icon: <Sparkles className="h-10 w-10 text-fe-teal" />
+    },
+    {
+      title: "Versatility and Flexibility",
+      description: "With the ability to print on a wide range of media types and sizes, our large format printing services offer unparalleled versatility and flexibility to accommodate diverse project requirements. Whether you need oversized blueprints, detailed renderings, or full-color presentations, our Prograft Tx 3000 printer can handle it all.",
+      icon: <RefreshCw className="h-10 w-10 text-fe-teal" />
+    },
+    {
+      title: "Customized Solutions",
+      description: "At Finite Element Designs Limited, we understand that every project is unique, which is why we offer customized printing solutions tailored to your specific needs and preferences. Whether you require high-resolution prints for client presentations, durable prints for on-site reference, or archival prints for long-term documentation.",
+      icon: <FileDigit className="h-10 w-10 text-fe-teal" />
+    },
+    {
+      title: "Fast Turnaround Times",
+      description: "We recognize the importance of timely project delivery, which is why we prioritize fast turnaround times for our large format printing services. Our efficient printing processes, combined with streamlined project management and logistics, ensure that your prints are produced quickly and efficiently without compromising on quality.",
+      icon: <ClockIcon className="h-10 w-10 text-fe-teal" />
+    },
+    {
+      title: "Quality Assurance",
+      description: "Quality is our top priority at Finite Element Designs Limited, and we take great care to ensure that every print meets the highest standards of quality and consistency. From color accuracy and print resolution to media durability and finish, our rigorous quality assurance processes guarantee that your prints are produced to the highest industry standards.",
+      icon: <CheckSquare className="h-10 w-10 text-fe-teal" />
+    },
+    {
+      title: "Professional Expertise",
+      description: "Backed by a team of experienced printing professionals, we offer unparalleled expertise and support to ensure that your printing experience is seamless and hassle-free. Whether you need assistance with file preparation, print customization, or technical troubleshooting, our knowledgeable team is here to provide you with expert guidance and support every step of the way.",
+      icon: <Users className="h-10 w-10 text-fe-teal" />
+    }
+  ];
+
+  // Printing options
+  const printingOptions = [
+    "Architectural blueprints",
+    "Engineering drawings",
+    "Construction documents",
+    "Project renderings",
+    "Marketing materials",
+    "Design boards",
+    "Site plans",
+    "Structural details"
+  ];
+
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -21,7 +67,7 @@ const LargeFormatPrinting = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
-              Large Format <span className="text-fe-orange">Printing</span>
+              Large Format <span className="text-fe-teal">Printing</span>
             </h1>
             <p className="text-gray-200 text-lg max-w-2xl">
               High-quality large format printing services for architectural plans, engineering drawings, construction documents, and more.
@@ -30,80 +76,124 @@ const LargeFormatPrinting = () => {
         </div>
       </section>
       
-      {/* Main Content */}
-      <section className="py-20 bg-white">
+      {/* Introduction */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
                 <Printer className="h-12 w-12 text-fe-teal" />
               </div>
-              <h2 className="text-3xl font-bold text-fe-blue mb-6">Technical Document Printing</h2>
+              <h2 className="text-3xl font-bold text-fe-blue mb-6">Cutting-Edge Large Format Printing</h2>
               <p className="text-gray-700 mb-6">
-                Our large format printing services are ideal for engineering and construction professionals who need precise, high-resolution prints of technical documents and plans.
+                Finite Element Designs Limited presents our cutting-edge Prograft Tx 3000 large format printing services, tailored to meet the specific needs of architects, engineers, and construction professionals. With our state-of-the-art printing technology and commitment to quality, we offer unparalleled printing solutions for architectural and structural drawings, plans, and blueprints.
               </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Architectural blueprints and plans</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Engineering drawings and schematics</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Construction documentation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Site plans and surveys</span>
-                </li>
-              </ul>
+              <p className="text-gray-700">
+                Our services facilitate documentation and visualization for projects of all sizes and complexities, ensuring your technical documents are reproduced with exceptional clarity and precision.
+              </p>
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
                 src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=1074&auto=format&fit=crop" 
-                alt="Technical Document Printing" 
+                alt="Large Format Printer" 
                 className="w-full h-full object-cover" 
               />
             </div>
           </div>
+        </div>
+      </section>
+      
+      {/* Services */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-fe-blue mb-12 text-center">Our Printing Services</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense">
-            <div className="lg:col-start-2">
-              <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
-                <FileDigit className="h-12 w-12 text-fe-teal" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div 
+                key={index} 
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 card-hover"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="bg-fe-blue bg-opacity-10 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-fe-blue mb-3">{service.title}</h3>
+                <p className="text-gray-700">{service.description}</p>
               </div>
-              <h2 className="text-3xl font-bold text-fe-blue mb-6">Comprehensive Printing Solutions</h2>
-              <p className="text-gray-700 mb-6">
-                Beyond basic printing, we offer a full range of services to meet your document management needs for engineering and construction projects.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Digital file conversion and formatting</span>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Printing Options */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-fe-blue mb-10 text-center">What We Print</h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {printingOptions.map((option, index) => (
+                <div 
+                  key={index} 
+                  className="bg-fe-blue bg-opacity-5 p-4 rounded-lg text-center hover:bg-opacity-10 transition-colors duration-300 border-b-2 border-fe-teal"
+                >
+                  <p className="text-fe-blue font-medium">{option}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Pricing and Sizes */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-fe-blue mb-10 text-center">Available Sizes and Media</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold text-fe-blue mb-4">Standard Sizes</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center justify-between border-b pb-2">
+                  <span className="text-gray-700">A0 (841 × 1189 mm)</span>
+                  <span className="text-fe-teal font-medium">Available</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Document scanning and archiving</span>
+                <li className="flex items-center justify-between border-b pb-2">
+                  <span className="text-gray-700">A1 (594 × 841 mm)</span>
+                  <span className="text-fe-teal font-medium">Available</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Custom binding and finishing options</span>
+                <li className="flex items-center justify-between border-b pb-2">
+                  <span className="text-gray-700">A2 (420 × 594 mm)</span>
+                  <span className="text-fe-teal font-medium">Available</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Delivery and distribution services</span>
+                <li className="flex items-center justify-between">
+                  <span className="text-gray-700">Custom sizes available upon request</span>
+                  <span className="text-fe-teal font-medium">✓</span>
                 </li>
               </ul>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-xl lg:col-start-1">
-              <img 
-                src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=1170&auto=format&fit=crop" 
-                alt="Document Management" 
-                className="w-full h-full object-cover" 
-              />
+            
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold text-fe-blue mb-4">Media Types</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center justify-between border-b pb-2">
+                  <span className="text-gray-700">Standard Bond Paper</span>
+                  <span className="text-fe-teal font-medium">Available</span>
+                </li>
+                <li className="flex items-center justify-between border-b pb-2">
+                  <span className="text-gray-700">Heavy Bond Paper</span>
+                  <span className="text-fe-teal font-medium">Available</span>
+                </li>
+                <li className="flex items-center justify-between border-b pb-2">
+                  <span className="text-gray-700">Photo Paper (Matte/Glossy)</span>
+                  <span className="text-fe-teal font-medium">Available</span>
+                </li>
+                <li className="flex items-center justify-between">
+                  <span className="text-gray-700">Specialty Media</span>
+                  <span className="text-fe-teal font-medium">Upon Request</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -126,11 +216,11 @@ const LargeFormatPrinting = () => {
               Need Professional Printing Services?
             </h2>
             <p className="text-gray-100 text-lg mb-8 max-w-2xl mx-auto">
-              Contact us today for high-quality, precise printing of your technical documents and plans.
+              Choose Finite Element Designs Limited for superior large format printing services that combine precision, versatility, and reliability. Contact us today to learn more about our printing capabilities.
             </p>
             <Link 
               to="/contact" 
-              className="button-primary bg-white text-fe-blue hover:bg-gray-100"
+              className="bg-white text-fe-teal px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-all"
             >
               Get a Printing Quote
             </Link>

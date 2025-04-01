@@ -1,10 +1,38 @@
 
 import React from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
-import { Building2, FileDigit } from 'lucide-react';
+import { Building2, Ruler, Droplets, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Card, CardContent } from '@/components/ui/card';
 
 const CivilStructuralEngineering = () => {
+  // Sample building types for structural engineering
+  const buildingTypes = [
+    "High-rise Buildings",
+    "Offices",
+    "Institutions/Schools/Hospitals",
+    "Bridges",
+    "Residential development",
+    "Industrial, Warehouses, Workshops"
+  ];
+
+  // Civil engineering services
+  const civilServices = [
+    "Access Roads",
+    "Water Supply",
+    "Sewerage",
+    "Storm Water Drainage"
+  ];
+
+  // Water specialties
+  const waterSpecialties = [
+    "Water supply network",
+    "Water treatment plants",
+    "Waste water collection and treatment",
+    "Storm water drainage management",
+    "Roads and transportation engineering"
+  ];
+
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -21,7 +49,7 @@ const CivilStructuralEngineering = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
-              Civil & <span className="text-fe-orange">Structural Engineering</span>
+              Civil & <span className="text-fe-teal">Structural Engineering</span>
             </h1>
             <p className="text-gray-200 text-lg max-w-2xl">
               Our comprehensive structural engineering solutions ensure the safety, efficiency, and sustainability of your buildings and infrastructure projects.
@@ -38,28 +66,21 @@ const CivilStructuralEngineering = () => {
               <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
                 <Building2 className="h-12 w-12 text-fe-teal" />
               </div>
-              <h2 className="text-3xl font-bold text-fe-blue mb-6">Comprehensive Structural Solutions</h2>
+              <h2 className="text-3xl font-bold text-fe-blue mb-6">Structural Engineering Services</h2>
               <p className="text-gray-700 mb-6">
-                Our civil and structural engineering services cover all aspects of building engineering, from conceptual design through construction documentation. We provide innovative and cost-effective solutions for buildings of all types and sizes.
+                Finite Element Designs Limited is responsible for structural engineering design and structural analysis. We undertake planning, design, construction supervision and maintenance management of building structures, substation structures, bridges and other major road drainage and water retaining structures.
               </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Steel, concrete, wood, and masonry design</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Multi-story building frameworks</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Foundation systems engineering</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Lateral force-resisting systems</span>
-                </li>
-              </ul>
+              
+              <h3 className="text-xl font-semibold text-fe-blue mb-4">We build structures such as:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-8">
+                {buildingTypes.map((type, index) => (
+                  <Card key={index} className="border-l-4 border-fe-teal card-hover">
+                    <CardContent className="p-4">
+                      <p className="text-gray-700">{type}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
@@ -73,37 +94,56 @@ const CivilStructuralEngineering = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:grid-flow-dense">
             <div className="lg:col-start-2">
               <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
-                <FileDigit className="h-12 w-12 text-fe-teal" />
+                <Droplets className="h-12 w-12 text-fe-teal" />
               </div>
-              <h2 className="text-3xl font-bold text-fe-blue mb-6">Advanced Analysis Capabilities</h2>
+              <h2 className="text-3xl font-bold text-fe-blue mb-6">Civil Engineering Services</h2>
               <p className="text-gray-700 mb-6">
-                We utilize state-of-the-art software and engineering principles to analyze complex structures and ensure they meet all safety and performance requirements.
+                We deal with planning, design, construction supervision and maintenance of infrastructure services. As well as planning, design, construction supervision and maintenance of site and service schemes and infrastructural services for substations, industrial, commercial and residential developments.
               </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Non-linear structural analysis</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Dynamic response simulation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Seismic performance evaluation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-fe-orange mr-2 mt-1">●</span>
-                  <span className="text-gray-700">Construction phase engineering support</span>
-                </li>
-              </ul>
+              
+              <h3 className="text-xl font-semibold text-fe-blue mb-4">Our civil engineering services include:</h3>
+              <div className="space-y-3 mb-8">
+                {civilServices.map((service, index) => (
+                  <div key={index} className="flex items-start bg-gray-50 p-3 rounded-md hover:bg-gray-100 transition-colors">
+                    <span className="text-fe-teal mr-2 mt-1">●</span>
+                    <span className="text-gray-700">{service}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl lg:col-start-1">
               <img 
-                src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=1170&auto=format&fit=crop" 
-                alt="Structural Analysis" 
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1171&auto=format&fit=crop" 
+                alt="Civil Engineering Services" 
                 className="w-full h-full object-cover" 
               />
+            </div>
+          </div>
+          
+          <div className="mt-16">
+            <div className="text-center mb-10">
+              <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
+                <Ruler className="h-12 w-12 text-fe-teal mx-auto" />
+              </div>
+              <h2 className="text-3xl font-bold text-fe-blue">Water & Infrastructure Engineering</h2>
+              <p className="text-gray-700 mt-4 max-w-3xl mx-auto">
+                We deal with specialized areas of water management and infrastructure development, ensuring sustainable and efficient solutions.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {waterSpecialties.map((specialty, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border-t-4 border-fe-teal"
+                >
+                  <BookOpen className="h-8 w-8 text-fe-teal mb-4" />
+                  <h3 className="text-xl font-medium text-fe-blue mb-2">{specialty}</h3>
+                  <p className="text-gray-600">
+                    Our expert engineers provide comprehensive solutions for {specialty.toLowerCase()} with a focus on sustainability and efficiency.
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -130,7 +170,7 @@ const CivilStructuralEngineering = () => {
             </p>
             <Link 
               to="/contact" 
-              className="button-primary bg-white text-fe-blue hover:bg-gray-100"
+              className="bg-white text-fe-teal px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-all"
             >
               Request a Consultation
             </Link>
