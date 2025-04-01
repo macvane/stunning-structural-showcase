@@ -32,40 +32,40 @@ const About = () => {
   // Team members
   const teamMembers = [
     {
-      name: 'Dr. James Mitchell',
+      name: 'Eng. Phares O. Atai C.E',
       position: 'Founder & CEO',
       bio: 'With over 25 years of structural engineering experience, Dr. Mitchell leads our team with a focus on innovation and excellence. He holds a Ph.D. in Structural Engineering from MIT.',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png',
+      imageUrl: '/assets/Officials/atai.jpg',
       email: 'james.mitchell@finiteelementdesigns.com',
       linkedin: 'https://linkedin.com'
     },
     {
-      name: 'Dr. Sarah Chen',
-      position: 'Principal Engineer',
+      name: 'Eng. Sharon J. Kimatui P.E',
+      position: 'Civil & Structural Engineer',
       bio: 'Dr. Chen specializes in seismic design and has led numerous high-profile projects across earthquake-prone regions. She brings analytical precision and creative problem-solving to every challenge.',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png',
+      imageUrl: '/assets/Officials/sharon.jpg',
       email: 'sarah.chen@finiteelementdesigns.com',
       linkedin: 'https://linkedin.com'
     },
     {
-      name: 'Michael Rodriguez',
-      position: 'Technical Director',
+      name: 'Eng. Esther K. Momanyi',
+      position: 'Assistant Structural Engineer',
       bio: 'Michael oversees our technical operations and advanced analysis. With expertise in FEA and computational modeling, he ensures our designs meet the highest technical standards.',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png',
+      imageUrl: '/assets/Officials/esther.jpg',
       email: 'michael.rodriguez@finiteelementdesigns.com',
       linkedin: 'https://linkedin.com'
     },
     {
-      name: 'Dr. Emma Wilson',
-      position: 'Research Director',
+      name: 'Rose N. Mukono',
+      position: 'Assistant Structural Engineer',
       bio: 'Leading our R&D initiatives, Dr. Wilson bridges academic research with practical applications. She focuses on developing innovative structural systems and sustainable design methods.',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png',
+      imageUrl: '/assets/Officials/rose.jpg',
       email: 'emma.wilson@finiteelementdesigns.com',
       linkedin: 'https://linkedin.com'
     },
     {
-      name: 'David Thompson',
-      position: 'Project Manager',
+      name: 'Rose N. Mukono',
+      position: 'Assistant Structural Engineer',
       bio: 'David excels in managing complex projects, ensuring they stay on schedule and within budget. His attention to detail and communication skills make him invaluable to our team.',
       imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png',
       email: 'david.thompson@finiteelementdesigns.com',
@@ -121,19 +121,19 @@ const About = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '300ms' }}>
               <span className="text-fe-orange font-medium">Our Story</span>
               <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
-                Engineering Innovation Since 2005
+                Engineering Innovation Since 2015
               </h2>
               
               <p className="text-gray-700 mb-6">
-                Finite Element Designs Ltd was founded in 2005 by Dr. James Mitchell with a vision to provide innovative structural engineering solutions that combine technical excellence with practical design. Since our inception, we have grown from a small consulting firm to a leading structural engineering company with a portfolio of successful projects across diverse sectors.
+              Finite Element Designs Limited is a registered engineering consultancy in Kenya, specializing in civil and structural projects with utmost integrity and expertise.
               </p>
               
               <p className="text-gray-700 mb-6">
-                Our journey has been marked by a commitment to pushing the boundaries of conventional structural design, embracing advanced technologies, and nurturing a team of talented engineers who share our passion for excellence.
+              Founded in 2015 and led by Eng. Phares Orina Atai, the firm excels in advanced design methods using technologies like Prokon software and Finite Element Analysis, delivering projects such as Rugsan Mall and Uplands Premium Dairies.
               </p>
               
               <p className="text-gray-700">
-                Today, we are proud to be recognized as a trusted partner for architects, developers, contractors, and building owners who seek engineering solutions that balance innovation, efficiency, safety, and sustainability.
+              Committed to innovation and excellence, the company also provides training and workshops for emerging engineers, serving as an accredited Prokon trainer for East and Central Africa.
               </p>
             </div>
           </div>
@@ -150,7 +150,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-fe-blue mb-4">Our Mission</h3>
               <p className="text-gray-700">
-                Our mission is to deliver innovative and sustainable structural engineering solutions that exceed client expectations, prioritize safety, and contribute positively to the built environment. We strive to provide exceptional value through technical excellence, creative problem-solving, and responsive service.
+              Our mission is to provide top-tier design, construction, and engineering training while upholding the highest standards of professionalism and integrity. We are dedicated to empowering the construction industry by developing engineering talent, driving innovation, and integrating cutting-edge technology. With a commitment to excellence, we strive to shape a more advanced, efficient, and globally competitive industry.
               </p>
             </div>
             
@@ -160,7 +160,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-fe-blue mb-4">Our Vision</h3>
               <p className="text-gray-700">
-                We envision being recognized globally as a leader in structural engineering innovation, known for advancing the industry through research, technology, and design excellence. We aim to shape the future of structural engineering by creating safer, more efficient, and more sustainable built environments that stand the test of time.
+              To be a world-leading company in engineering design, technological innovation, engineering management, steel fabrication and training in the construction industry.
               </p>
             </div>
           </div>
@@ -235,7 +235,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 reveal-on-scroll">
-              <div className="text-4xl font-bold text-white mb-2">2005</div>
+              <div className="text-4xl font-bold text-white mb-2">2015</div>
               <p className="text-white opacity-80">Year Founded</p>
             </div>
             <div className="text-center p-6 reveal-on-scroll" style={{ animationDelay: '100ms' }}>
@@ -247,8 +247,8 @@ const About = () => {
               <p className="text-white opacity-80">Industry Partners</p>
             </div>
             <div className="text-center p-6 reveal-on-scroll" style={{ animationDelay: '300ms' }}>
-              <div className="text-4xl font-bold text-white mb-2">3</div>
-              <p className="text-white opacity-80">Office Locations</p>
+              <div className="text-4xl font-bold text-white mb-2">1</div>
+              <p className="text-white opacity-80">Office Location</p>
             </div>
           </div>
         </div>

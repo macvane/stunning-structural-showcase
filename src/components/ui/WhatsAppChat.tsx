@@ -32,7 +32,7 @@ const WhatsAppChat: React.FC = () => {
           </p>
           <button
             onClick={openWhatsApp}
-            className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center"
+            className="w-full bg-[#013F74] hover:bg-[#175F7D] text-white py-2 px-4 rounded-md transition-colors flex items-center justify-center"
           >
             <MessageCircle className="mr-2" size={18} />
             Start Chat
@@ -42,7 +42,7 @@ const WhatsAppChat: React.FC = () => {
       
       <button
         onClick={toggleChat}
-        className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center whatsapp-button-pulse"
+        className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle size={24} />

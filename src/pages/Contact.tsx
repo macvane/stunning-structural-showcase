@@ -19,11 +19,13 @@ const Contact = () => {
 
   // Service options
   const serviceOptions = [
-    'Structural Design',
-    'Finite Element Analysis',
-    'BIM Integration',
-    'Seismic Engineering',
-    'Construction Support',
+    'Civil & Structural Engineering',
+    'Structural Engineering Training',
+    'Structural Engineering Consultancy',
+    'Project Management',
+    'Steel Fabrication',
+    'Large Format Printing',
+    'Design Build',
     'Other'
   ];
 
@@ -119,8 +121,8 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-medium text-fe-blue mb-1">Main Office</h3>
                       <p className="text-gray-700">
-                        123 Engineering Way, Suite 500<br />
-                        San Francisco, CA 94103
+                      Deep Blue Building, 2nd Floor Room 32, <br />
+                      Kahawa Wendani, Along Thika Road
                       </p>
                     </div>
                   </div>
@@ -131,7 +133,7 @@ const Contact = () => {
                       <h3 className="text-lg font-medium text-fe-blue mb-1">Phone</h3>
                       <p className="text-gray-700">
                         <a href="tel:+14155550123" className="hover:text-fe-teal transition-colors">
-                          (415) 555-0123
+                          (+254) 772-041-005
                         </a>
                       </p>
                     </div>
@@ -142,8 +144,8 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-medium text-fe-blue mb-1">Email</h3>
                       <p className="text-gray-700">
-                        <a href="mailto:info@finiteelementdesigns.com" className="hover:text-fe-teal transition-colors">
-                          info@finiteelementdesigns.com
+                        <a href="mailto:info@finiteelementdesignsltd.com" className="hover:text-fe-teal transition-colors">
+                          info@finiteelementdesignsltd.com
                         </a>
                       </p>
                     </div>
@@ -336,9 +338,7 @@ const Contact = () => {
           
           <div className="rounded-lg overflow-hidden shadow-lg reveal-on-scroll">
             {/* This would typically be a Google Maps iframe, using a placeholder for now */}
-            <div className="bg-gray-300 h-96 w-full flex items-center justify-center">
-              <p className="text-gray-700">Interactive Map Would Be Embedded Here</p>
-            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9484194113184!2d36.921742674182774!3d-1.1964756355329225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3fba2970841f%3A0x27284ed0bb076d86!2sMagunas%20Supermarket%20Kahawa%20Wendani!5e0!3m2!1sen!2ske!4v1743518900775!5m2!1sen!2ske" className='w-full h-[60vh]'  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </section>
@@ -354,10 +354,10 @@ const Contact = () => {
               For time-sensitive matters or immediate support, give us a call. Our team is ready to help you with your structural engineering needs.
             </p>
             <a 
-              href="tel:+14155550123" 
+              href="tel:+254 772 041005" 
               className="button-primary bg-white text-fe-teal hover:bg-gray-100"
             >
-              <Phone className="mr-2 h-5 w-5" /> Call (415) 555-0123
+              <Phone className="mr-2 h-5 w-5" /> Call (254) 772-041-005
             </a>
           </div>
         </div>

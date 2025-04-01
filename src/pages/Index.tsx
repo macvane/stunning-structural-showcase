@@ -10,45 +10,45 @@ const Index = () => {
   const services = [
     {
       id: 'structural-design',
-      title: 'Structural Design',
+      title: 'Civil & Structural Engineering Services',
       description: 'Comprehensive structural engineering solutions for commercial, residential, and industrial projects.',
       icon: <Building2 className="h-8 w-8 text-fe-teal" />,
-      link: '/services#structural-design'
+      link: '/services/civil-structural-engineering'
     },
     {
       id: 'finite-element-analysis',
-      title: 'Finite Element Analysis',
+      title: 'Structural Engineering Training',
       description: 'Advanced computational modeling for complex structural systems and detailed stress analysis.',
       icon: <FileDigit className="h-8 w-8 text-fe-teal" />,
-      link: '/services#finite-element-analysis'
+      link: '/services/structural-training'
     },
     {
       id: 'building-information-modeling',
-      title: 'BIM Integration',
+      title: 'Structural Engineering Consultancy',
       description: 'State-of-the-art Building Information Modeling for enhanced project coordination and visualization.',
       icon: <Ruler className="h-8 w-8 text-fe-teal" />,
-      link: '/services#building-information-modeling'
+      link: '/services/structural-consultancy'
     },
     {
       id: 'seismic-engineering',
-      title: 'Seismic Engineering',
+      title: 'Design-Build',
       description: 'Specialized analysis and design for structures in seismic zones to ensure safety and compliance.',
       icon: <Activity className="h-8 w-8 text-fe-teal" />,
-      link: '/services#seismic-engineering'
+      link: '/services/design-build'
     },
     {
       id: 'construction-support',
-      title: 'Construction Support',
+      title: 'Steel Fabrication',
       description: 'On-site consulting and support services throughout the construction phase of your project.',
       icon: <HardHat className="h-8 w-8 text-fe-teal" />,
-      link: '/services#construction-support'
+      link: '/services/steel-fabrication'
     },
     {
       id: 'performance-based-design',
-      title: 'Performance-Based Design',
+      title: 'Large Format Printing',
       description: 'Innovative design approaches focused on building performance beyond code compliance.',
       icon: <BarChart3 className="h-8 w-8 text-fe-teal" />,
-      link: '/services#performance-based-design'
+      link: '/large-format-printing'
     }
   ];
 
@@ -88,7 +88,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pb-16">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-fe-blue opacity-80"></div>
+          <div className="absolute inset-0 bg-fe-blue opacity-40"></div>
           <img 
             src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1170&auto=format&fit=crop" 
             alt="Modern construction site" 
@@ -125,7 +125,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal-on-scroll">
               <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1170&auto=format&fit=crop" 
+                src="https://finiteelementdesignsltd.com/static/media/IMG-20240105-WA0002.95885954b5aefddb79f8.jpg" 
                 alt="Construction engineer reviewing plans" 
                 className="w-full h-auto rounded-lg shadow-xl" 
               />
@@ -134,7 +134,7 @@ const Index = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '300ms' }}>
               <span className="text-fe-orange font-medium">About Our Company</span>
               <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
-                Engineering Excellence Since 2005
+                Engineering Excellence Since 2015
               </h2>
               
               <p className="text-gray-700 mb-6">
@@ -220,15 +220,15 @@ const Index = () => {
             <div className="reveal-on-scroll">
               <Link to="/portfolio/1" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="https://images.unsplash.com/photo-1486192133801-f346d66b986e?q=80&w=1170&auto=format&fit=crop" 
+                  src="https://finiteelementdesignsltd.com/static/media/DSC06699.fbc3e16850fcf73a2831.JPG" 
                   alt="Commercial high-rise project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Commercial</span>
-                  <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Azure Tower</h3>
-                  <p className="text-sm text-gray-200">San Francisco, CA</p>
+                  <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Residential</span>
+                  <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Key WestApartments</h3>
+                  <p className="text-sm text-gray-200">Key West, NA</p>
                 </div>
               </Link>
             </div>
@@ -236,15 +236,15 @@ const Index = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '200ms' }}>
               <Link to="/portfolio/2" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="https://images.unsplash.com/photo-1545296758-4d9ac7602a8f?q=80&w=1170&auto=format&fit=crop" 
+                  src="https://finiteelementdesignsltd.com/static/media/IMG_20190828_094248.581ab50b414ce00eeaad.jpg" 
                   alt="Bridge engineering project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
                   <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Infrastructure</span>
-                  <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Riverfront Bridge</h3>
-                  <p className="text-sm text-gray-200">Portland, OR</p>
+                  <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Richmond Suites</h3>
+                  <p className="text-sm text-gray-200">Richmond, OR</p>
                 </div>
               </Link>
             </div>
@@ -258,9 +258,9 @@ const Index = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
                 <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Institutional</span>
-                  <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Science Innovation Center</h3>
-                  <p className="text-sm text-gray-200">Boston, MA</p>
+                  <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Residential</span>
+                  <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Otuke Residential Home</h3>
+                  <p className="text-sm text-gray-200">Otuke, MA</p>
                 </div>
               </Link>
             </div>
