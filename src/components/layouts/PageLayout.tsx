@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import WhatsAppChat from '../ui/WhatsAppChat';
+import ScrollToTop from './ScrollToTop';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -41,6 +42,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, className = "" }) => 
       <main className={`flex-grow ${className}`}>
         {children}
       </main>
+      <ScrollToTop />
       <Footer />
       <WhatsAppChat />
     </div>
