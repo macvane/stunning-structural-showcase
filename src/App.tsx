@@ -10,6 +10,7 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
+import Articles from "./pages/Articles";
 import NotFound from "./pages/NotFound";
 
 // Import service pages
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/articles" element={<Articles />} />
           
           {/* Service routes */}
           <Route path="/services/civil-structural-engineering" element={<CivilStructuralEngineering />} />

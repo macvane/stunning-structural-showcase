@@ -130,11 +130,11 @@
   }
   
   .button-primary {
-    @apply bg-fe-teal text-white px-6 py-3 rounded-md transition-all duration-300 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-fe-teal focus:ring-opacity-50 shadow-md hover:shadow-lg;
+    @apply bg-fe-teal text-white px-6 py-3 rounded-md transition-all duration-300 hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-fe-teal focus:ring-opacity-50 shadow-md hover:shadow-lg flex items-center justify-center;
   }
   
   .button-secondary {
-    @apply bg-transparent border border-fe-teal text-fe-teal px-6 py-3 rounded-md transition-all duration-300 hover:bg-fe-teal hover:text-white focus:outline-none focus:ring-2 focus:ring-fe-teal focus:ring-opacity-50;
+    @apply bg-transparent border border-fe-teal text-fe-teal px-6 py-3 rounded-md transition-all duration-300 hover:bg-fe-teal hover:text-white focus:outline-none focus:ring-2 focus:ring-fe-teal focus:ring-opacity-50 flex items-center justify-center;
   }
   
   .reveal-on-scroll {
@@ -143,5 +143,31 @@
   
   .reveal-on-scroll.revealed {
     @apply opacity-100 translate-y-0;
+  }
+
+  /* WhatsApp chat button animation */
+  .whatsapp-button-pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+
+  /* Article card hover effects */
+  .article-card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .article-card-hover:hover {
+    @apply transform -translate-y-2 shadow-xl;
   }
 }

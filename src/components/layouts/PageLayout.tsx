@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import WhatsAppChat from '../ui/WhatsAppChat';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -41,6 +42,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, className = "" }) => 
         {children}
       </main>
       <Footer />
+      <WhatsAppChat />
     </div>
   );
 };
