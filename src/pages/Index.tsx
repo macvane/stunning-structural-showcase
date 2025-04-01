@@ -2,59 +2,52 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
 import ServiceCard from '@/components/ui/ServiceCard';
-import { ArrowRight, Building2, HardHat, FileDigit, Activity, BarChart3, Ruler, Printer, Construction } from 'lucide-react';
+import { ArrowRight, Building2, HardHat, FileDigit, Activity, BarChart3, Ruler } from 'lucide-react';
 
 const Index = () => {
   // Services data
   const services = [
     {
-      id: 'civil-structural-engineering',
-      title: 'Civil & Structural Engineering',
-      description: 'Expert structural design and analysis for buildings, bridges, and infrastructure projects.',
+      id: 'structural-design',
+      title: 'Structural Design',
+      description: 'Comprehensive structural engineering solutions for commercial, residential, and industrial projects.',
       icon: <Building2 className="h-8 w-8 text-fe-teal" />,
-      link: '/services/civil-structural-engineering'
+      link: '/services#structural-design'
     },
     {
-      id: 'structural-training',
-      title: 'Structural Engineering Training',
-      description: 'Certified Prokon software training and professional development for engineers.',
+      id: 'finite-element-analysis',
+      title: 'Finite Element Analysis',
+      description: 'Advanced computational modeling for complex structural systems and detailed stress analysis.',
       icon: <FileDigit className="h-8 w-8 text-fe-teal" />,
-      link: '/services/structural-training'
+      link: '/services#finite-element-analysis'
     },
     {
-      id: 'structural-consultancy',
-      title: 'Structural Design Consultancy',
-      description: 'Expert consultation for residential, commercial, and industrial structural projects.',
+      id: 'building-information-modeling',
+      title: 'BIM Integration',
+      description: 'State-of-the-art Building Information Modeling for enhanced project coordination and visualization.',
       icon: <Ruler className="h-8 w-8 text-fe-teal" />,
-      link: '/services/structural-consultancy'
+      link: '/services#building-information-modeling'
     },
     {
-      id: 'project-management',
-      title: 'Project Management',
-      description: 'Comprehensive project planning, execution, and monitoring for construction projects.',
-      icon: <BarChart3 className="h-8 w-8 text-fe-teal" />,
-      link: '/services/project-management'
+      id: 'seismic-engineering',
+      title: 'Seismic Engineering',
+      description: 'Specialized analysis and design for structures in seismic zones to ensure safety and compliance.',
+      icon: <Activity className="h-8 w-8 text-fe-teal" />,
+      link: '/services#seismic-engineering'
     },
     {
-      id: 'steel-fabrication',
-      title: 'Steel Fabrication',
-      description: 'Precision steel fabrication services delivering high-quality structural components.',
-      icon: <Construction className="h-8 w-8 text-fe-teal" />,
-      link: '/services/steel-fabrication'
-    },
-    {
-      id: 'large-format-printing',
-      title: 'Large Format Printing',
-      description: 'State-of-the-art Prograft Tx 3000 printing for architectural and engineering drawings.',
-      icon: <Printer className="h-8 w-8 text-fe-teal" />,
-      link: '/services/large-format-printing'
-    },
-    {
-      id: 'design-build',
-      title: 'Design Build',
-      description: 'Integrated design and construction solutions for concrete and steel structures.',
+      id: 'construction-support',
+      title: 'Construction Support',
+      description: 'On-site consulting and support services throughout the construction phase of your project.',
       icon: <HardHat className="h-8 w-8 text-fe-teal" />,
-      link: '/services/design-build'
+      link: '/services#construction-support'
+    },
+    {
+      id: 'performance-based-design',
+      title: 'Performance-Based Design',
+      description: 'Innovative design approaches focused on building performance beyond code compliance.',
+      icon: <BarChart3 className="h-8 w-8 text-fe-teal" />,
+      link: '/services#performance-based-design'
     }
   ];
 
@@ -137,12 +130,12 @@ const Index = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-            <span className="text-fe-teal font-medium">Our Services</span>
+            <span className="text-fe-orange font-medium">Our Services</span>
             <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
-              Comprehensive Engineering Solutions
+              Comprehensive Structural Engineering Solutions
             </h2>
             <p className="text-gray-700">
-              We offer a wide range of specialized engineering services tailored to meet the specific needs of your project, from conceptual design to construction.
+              We offer a wide range of engineering services tailored to meet the specific needs of your project, from conceptual design to construction support.
             </p>
           </div>
           
@@ -160,11 +153,8 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12 reveal-on-scroll">
-            <Link 
-              to="/services" 
-              className="group inline-flex items-center bg-fe-teal text-white px-6 py-3 rounded-md hover:bg-fe-blue transition-colors duration-300"
-            >
-              Explore All Our Services
+            <Link to="/services" className="group inline-flex items-center text-fe-orange font-medium text-lg">
+              View All Services
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -176,7 +166,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div className="max-w-2xl reveal-on-scroll">
-              <span className="text-fe-teal font-medium">Featured Projects</span>
+              <span className="text-fe-orange font-medium">Featured Projects</span>
               <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-4">
                 Our Recent Work
               </h2>
