@@ -1,6 +1,7 @@
+
 import React from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
-import { BookOpen, Users, PenTool, BarChart4, Award, BookCheck } from 'lucide-react';
+import { BookOpen, Users, PenTool, BarChart4, Award, BookCheck, Building, Ruler, Wand2, AreaChart } from 'lucide-react';
 
 const StructuralTraining = () => {
   // Training programs data
@@ -61,7 +62,7 @@ const StructuralTraining = () => {
       id: 'seismic-design',
       title: 'Seismic Design Principles',
       description: 'An overview of seismic design considerations, including earthquake loading, structural dynamics, and performance-based design approaches.',
-      icon: <Activity className="h-8 w-8 text-fe-teal" />,
+      icon: <Wand2 className="h-8 w-8 text-fe-teal" />,
       modules: [
         'Introduction to Earthquakes',
         'Seismic Loading',
@@ -74,7 +75,7 @@ const StructuralTraining = () => {
       id: 'advanced-analysis',
       title: 'Advanced Structural Analysis',
       description: 'An exploration of advanced analysis techniques, such as finite element analysis and non-linear analysis, for complex structural systems.',
-      icon: <BarChart3 className="h-8 w-8 text-fe-teal" />,
+      icon: <AreaChart className="h-8 w-8 text-fe-teal" />,
       modules: [
         'Introduction to Finite Element Analysis',
         'Non-Linear Analysis',

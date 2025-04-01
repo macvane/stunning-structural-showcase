@@ -1,6 +1,7 @@
+
 import React from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
-import { Building2, Building, Ruler, WaterIcon, Construction, AreaChart } from 'lucide-react';
+import { Building2, Building, Ruler, Droplets, Construction, AreaChart } from 'lucide-react';
 
 const CivilStructuralEngineering = () => {
   const heroContent = {
@@ -29,7 +30,7 @@ const CivilStructuralEngineering = () => {
     {
       title: 'Water Resources Engineering',
       description: 'Expertise in water supply, wastewater treatment, and stormwater management to ensure efficient and sustainable water usage.',
-      icon: <WaterIcon className="h-8 w-8 text-fe-teal" />,
+      icon: <Droplets className="h-8 w-8 text-fe-teal" />,
     },
     {
       title: 'Construction Management',
