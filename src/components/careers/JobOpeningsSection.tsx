@@ -18,7 +18,7 @@ const JobOpeningsSection: React.FC = () => {
       title: 'Senior Structural Engineer',
       location: 'San Francisco, CA',
       type: 'Full-time',
-      salaryRange: '$110,000 - $140,000/year',
+      salaryRange: '',
       description: 'We are seeking an experienced Senior Structural Engineer to lead complex projects from concept to completion. The ideal candidate will have expertise in advanced analysis techniques and a track record of successful project delivery.'
     },
     {
@@ -26,7 +26,7 @@ const JobOpeningsSection: React.FC = () => {
       title: 'Structural Engineer',
       location: 'Boston, MA',
       type: 'Full-time',
-      salaryRange: '$85,000 - $110,000/year',
+      salaryRange: '',
       description: 'Join our team as a Structural Engineer responsible for analyzing and designing structural systems for various projects. You\'ll work closely with senior engineers and contribute to innovative design solutions.'
     },
     {
@@ -34,7 +34,7 @@ const JobOpeningsSection: React.FC = () => {
       title: 'BIM Specialist',
       location: 'Remote',
       type: 'Full-time',
-      salaryRange: '$75,000 - $95,000/year',
+      salaryRange: '',
       description: 'We\'re looking for a Building Information Modeling (BIM) Specialist to enhance our 3D modeling capabilities. You\'ll develop and maintain BIM standards, create detailed structural models, and coordinate with other disciplines.'
     },
     {
@@ -42,7 +42,7 @@ const JobOpeningsSection: React.FC = () => {
       title: 'Project Engineer',
       location: 'Chicago, IL',
       type: 'Full-time',
-      salaryRange: '$70,000 - $90,000/year',
+      salaryRange: '',
       description: 'As a Project Engineer, you\'ll support project managers in delivering structural engineering projects, prepare calculations, develop drawings, and coordinate with clients and contractors.'
     },
     {
@@ -50,7 +50,7 @@ const JobOpeningsSection: React.FC = () => {
       title: 'Structural Designer',
       location: 'New York, NY',
       type: 'Full-time',
-      salaryRange: '$65,000 - $85,000/year',
+      salaryRange: '',
       description: 'We are seeking a detail-oriented Structural Designer to prepare structural drawings and models, assist with calculations, and contribute to design documentation.'
     },
     {
@@ -58,7 +58,7 @@ const JobOpeningsSection: React.FC = () => {
       title: 'Engineering Intern',
       location: 'Multiple Locations',
       type: 'Part-time',
-      salaryRange: '$25 - $30/hour',
+      salaryRange: '',
       description: 'Gain valuable experience as an Engineering Intern at Finite Element Designs. You\'ll learn from experienced engineers, assist with real projects, and develop practical skills in structural engineering.'
     }
   ];

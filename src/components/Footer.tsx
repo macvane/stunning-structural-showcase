@@ -87,18 +87,18 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="mr-3 h-5 w-5 text-fe-orange flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">123 Engineering Way, Suite 500<br />San Francisco, CA 94103</span>
+                <span className="text-gray-300">Deep Blue Building, 2nd Floor Room 32,<br />Kahawa Wendani, Along Thika Road</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 h-5 w-5 text-fe-orange flex-shrink-0" />
                 <a href="tel:+14155550123" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">
-                  (415) 555-0123
+                  (254) 772-041-005
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-fe-orange flex-shrink-0" />
-                <a href="mailto:info@finiteelementdesigns.com" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">
-                  info@finiteelementdesigns.com
+                <a href="mailto:info@finiteelementdesignsltd.com" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">
+                  info@finiteelementdesignsltd.com
                 </a>
               </li>
             </ul>
@@ -109,20 +109,10 @@ const Footer: React.FC = () => {
       {/* Copyright */}
       <div className="border-t border-gray-700">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <p className="text-sm text-center text-gray-400">
               &copy; {new Date().getFullYear()} Finite Element Designs Ltd. All rights reserved.
             </p>
-            <div className="mt-4 md:mt-0">
-              <ul className="flex space-x-6 text-sm">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-fe-orange transition-colors duration-300">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-fe-orange transition-colors duration-300">Terms of Service</a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

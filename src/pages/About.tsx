@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
 import TeamMember from '@/components/ui/TeamMember';
 import { Award, Lightbulb, Users, Clock, CheckCircle2, Trophy } from 'lucide-react';
@@ -9,8 +10,8 @@ const About = () => {
   const coreValues = [
     {
       icon: <CheckCircle2 className="h-10 w-10 text-fe-teal" />,
-      title: 'Excellence',
-      description: 'We strive for excellence in every aspect of our work, delivering high-quality solutions that exceed expectations.'
+      title: 'Efficiency',
+      description: 'We focus on efficiency, continuous training, and best practices to achieve optimal outcomes with minimal waste.'
     },
     {
       icon: <Lightbulb className="h-10 w-10 text-fe-teal" />,
@@ -34,7 +35,7 @@ const About = () => {
     {
       name: 'Eng. Phares O. Atai C.E',
       position: 'Founder & CEO',
-      bio: 'With over 25 years of structural engineering experience, Dr. Mitchell leads our team with a focus on innovation and excellence. He holds a Ph.D. in Structural Engineering from MIT.',
+      bio: 'With over 25 years of structural engineering experience, Eng. Phares O. Atai leads our team with a focus on innovation and excellence. He holds a Ph.D. in Structural Engineering from MIT.',
       imageUrl: '/assets/Officials/atai.jpg',
       email: 'james.mitchell@finiteelementdesigns.com',
       linkedin: 'https://linkedin.com'
@@ -42,7 +43,7 @@ const About = () => {
     {
       name: 'Eng. Sharon J. Kimatui P.E',
       position: 'Civil & Structural Engineer',
-      bio: 'Dr. Chen specializes in seismic design and has led numerous high-profile projects across earthquake-prone regions. She brings analytical precision and creative problem-solving to every challenge.',
+      bio: 'Eng. Sharon J. Kimatui specializes in seismic design and has led numerous high-profile projects across earthquake-prone regions. She brings analytical precision and creative problem-solving to every challenge.',
       imageUrl: '/assets/Officials/sharon.jpg',
       email: 'sarah.chen@finiteelementdesigns.com',
       linkedin: 'https://linkedin.com'
@@ -50,33 +51,9 @@ const About = () => {
     {
       name: 'Eng. Esther K. Momanyi',
       position: 'Assistant Structural Engineer',
-      bio: 'Michael oversees our technical operations and advanced analysis. With expertise in FEA and computational modeling, he ensures our designs meet the highest technical standards.',
+      bio: 'Eng. Esther K. Momanyi oversees our technical operations and advanced analysis. With expertise in FEA and computational modeling, he ensures our designs meet the highest technical standards.',
       imageUrl: '/assets/Officials/esther.jpg',
       email: 'michael.rodriguez@finiteelementdesigns.com',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Rose N. Mukono',
-      position: 'Assistant Structural Engineer',
-      bio: 'Leading our R&D initiatives, Dr. Wilson bridges academic research with practical applications. She focuses on developing innovative structural systems and sustainable design methods.',
-      imageUrl: '/assets/Officials/rose.jpg',
-      email: 'emma.wilson@finiteelementdesigns.com',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Rose N. Mukono',
-      position: 'Assistant Structural Engineer',
-      bio: 'David excels in managing complex projects, ensuring they stay on schedule and within budget. His attention to detail and communication skills make him invaluable to our team.',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png',
-      email: 'david.thompson@finiteelementdesigns.com',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      name: 'Lisa Patel',
-      position: 'BIM Manager',
-      bio: 'Lisa leads our Building Information Modeling team, implementing cutting-edge tools and workflows for visualization and coordination, enhancing project delivery and client satisfaction.',
-      imageUrl: '/lovable-uploads/c97d473d-c21e-4f90-a301-9a7e031326b3.png',
-      email: 'lisa.patel@finiteelementdesigns.com',
       linkedin: 'https://linkedin.com'
     }
   ];
@@ -112,9 +89,9 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal-on-scroll">
               <img 
-                src="/lovable-uploads/aeb304dd-e51e-4c82-87d5-1d997a4858d0.png" 
+                src="/assets/Officials/atai.jpg" 
                 alt="Finite Element Designs headquarters" 
-                className="w-full h-auto rounded-lg shadow-xl" 
+                className="w-full h-auto md:h-[39rem] rounded-lg shadow-xl object-cover object-top" 
               />
             </div>
             
@@ -264,12 +241,12 @@ const About = () => {
             <p className="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">
               We're always looking for talented and passionate engineers to join our team. Explore current opportunities and become part of our innovation journey.
             </p>
-            <a 
-              href="/careers" 
+            <Link
+              to="/careers" 
               className="button-primary"
             >
               View Current Openings
-            </a>
+            </Link>
           </div>
         </div>
       </section>
