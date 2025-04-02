@@ -19,7 +19,7 @@ const Articles = () => {
     {
       title: 'Advancements in Seismic Engineering Technology',
       excerpt: 'How modern technology and computational methods are revolutionizing the way engineers design structures to withstand earthquakes and other seismic events.',
-      author: 'Dr. Jane Kamau',
+      author: 'Eng. Phares O. Atai',
       date: 'April 8, 2023',
       image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1170&auto=format&fit=crop',
       category: 'Technology',
@@ -28,7 +28,7 @@ const Articles = () => {
     {
       title: 'Building Information Modeling: A Game Changer',
       excerpt: 'How BIM is transforming the construction industry by improving collaboration, reducing errors, and optimizing project delivery.',
-      author: 'Eng. Michael Odera',
+      author: 'Eng. Sharon Kimutai',
       date: 'March 22, 2023',
       image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1170&auto=format&fit=crop',
       category: 'Innovation',
@@ -37,7 +37,7 @@ const Articles = () => {
     {
       title: 'Steel vs. Concrete: Choosing the Right Material',
       excerpt: 'A comprehensive comparison of steel and concrete structural systems, examining their strengths, limitations, and optimal applications in modern construction.',
-      author: 'Eng. David Mwangi',
+      author: 'Eng. Phares O. Atai',
       date: 'February 10, 2023',
       image: 'https://images.unsplash.com/photo-1518005068251-37900150dfca?q=80&w=1085&auto=format&fit=crop',
       category: 'Materials',
@@ -55,7 +55,7 @@ const Articles = () => {
     {
       title: 'Resilient Infrastructure for Climate Change',
       excerpt: 'Strategies for designing and building infrastructure systems that can withstand the increasing frequency and intensity of climate-related hazards.',
-      author: 'Dr. Sarah Nyambura',
+      author: 'Eng. Esther K. Momanyi',
       date: 'December 12, 2022',
       image: 'https://images.unsplash.com/photo-1545236085-1467c5536d99?q=80&w=1135&auto=format&fit=crop',
       category: 'Sustainability',

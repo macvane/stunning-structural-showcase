@@ -11,42 +11,42 @@ const Index = () => {
     {
       id: 'structural-design',
       title: 'Civil & Structural Engineering Services',
-      description: 'Comprehensive structural engineering solutions for commercial, residential, and industrial projects.',
+      description: 'Expert structural engineering, design, and analysis for buildings, bridges, and infrastructure built for strength and reliability.',
       icon: <Building2 className="h-8 w-8 text-fe-teal" />,
       link: '/services/civil-structural-engineering'
     },
     {
       id: 'finite-element-analysis',
       title: 'Structural Engineering Training',
-      description: 'Advanced computational modeling for complex structural systems and detailed stress analysis.',
+      description: 'Master structural engineering with expert-led training designed for real-world applications.',
       icon: <FileDigit className="h-8 w-8 text-fe-teal" />,
       link: '/services/structural-training'
     },
     {
       id: 'building-information-modeling',
       title: 'Structural Engineering Consultancy',
-      description: 'State-of-the-art Building Information Modeling for enhanced project coordination and visualization.',
+      description: 'Expert structural engineering consultancy for safe, efficient, and innovative designs.',
       icon: <Ruler className="h-8 w-8 text-fe-teal" />,
       link: '/services/structural-consultancy'
     },
     {
       id: 'seismic-engineering',
       title: 'Design-Build',
-      description: 'Specialized analysis and design for structures in seismic zones to ensure safety and compliance.',
+      description: 'Integrated design-build services for streamlined, efficient, and high-quality project delivery.',
       icon: <Activity className="h-8 w-8 text-fe-teal" />,
       link: '/services/design-build'
     },
     {
       id: 'construction-support',
       title: 'Steel Fabrication',
-      description: 'On-site consulting and support services throughout the construction phase of your project.',
+      description: 'Precision steel fabrication for durable, high-quality, and custom-built structures.',
       icon: <HardHat className="h-8 w-8 text-fe-teal" />,
       link: '/services/steel-fabrication'
     },
     {
       id: 'performance-based-design',
       title: 'Large Format Printing',
-      description: 'Innovative design approaches focused on building performance beyond code compliance.',
+      description: 'High-quality large format printing for bold, vibrant, and eye-catching visuals.',
       icon: <BarChart3 className="h-8 w-8 text-fe-teal" />,
       link: '/large-format-printing'
     }
@@ -58,7 +58,7 @@ const Index = () => {
       title: 'The Future of Sustainable Structural Design',
       excerpt: 'Exploring innovative approaches to eco-friendly structural engineering that minimize environmental impact while maximizing performance and safety.',
       author: 'Eng. Phares O. Atai',
-      date: 'June 15, 2023',
+      date: 'June 15, 2024',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1170&auto=format&fit=crop',
       category: 'Sustainability',
       slug: 'future-sustainable-structural-design'
@@ -66,8 +66,8 @@ const Index = () => {
     {
       title: 'Advancements in Seismic Engineering Technology',
       excerpt: 'How modern technology and computational methods are revolutionizing the way engineers design structures to withstand earthquakes and other seismic events.',
-      author: 'Dr. Jane Kamau',
-      date: 'April 8, 2023',
+      author: 'Eng. Esther K. Momanyi',
+      date: 'January 8, 2025',
       image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1170&auto=format&fit=crop',
       category: 'Technology',
       slug: 'advancements-seismic-engineering-technology'
@@ -75,8 +75,8 @@ const Index = () => {
     {
       title: 'Building Information Modeling: A Game Changer',
       excerpt: 'How BIM is transforming the construction industry by improving collaboration, reducing errors, and optimizing project delivery.',
-      author: 'Eng. Michael Odera',
-      date: 'March 22, 2023',
+      author: 'Eng. Phares O. Atai',
+      date: 'March 22, 2024',
       image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1170&auto=format&fit=crop',
       category: 'Innovation',
       slug: 'bim-game-changer'
@@ -125,9 +125,9 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal-on-scroll">
               <img 
-                src="https://finiteelementdesignsltd.com/static/media/IMG-20240105-WA0002.95885954b5aefddb79f8.jpg" 
+                src="https://i.pinimg.com/736x/9d/22/10/9d22102447131a3279fa020654de9bd5.jpg" 
                 alt="Construction engineer reviewing plans" 
-                className="w-full h-auto rounded-lg shadow-xl" 
+                className="w-full h-auto md:h-[34rem] rounded-lg shadow-xl object-cover object-top" 
               />
             </div>
             
@@ -145,11 +145,11 @@ const Index = () => {
                 With expertise spanning residential, commercial, industrial, and infrastructure projects, we pride ourselves on tackling complex engineering challenges and transforming them into elegant, functional structures that stand the test of time.
               </p>
               
-              <div className="flex flex-wrap gap-4">
-                <Link to="/about" className="button-primary">
+              <div className="flex flex-wrap gap-4 ">
+                <Link to="/about" className="button-primary w-full md:w-auto">
                   Learn More About Us
                 </Link>
-                <Link to="/contact" className="button-secondary">
+                <Link to="/contact" className="button-secondary w-full md:w-auto">
                   Contact Us
                 </Link>
               </div>
@@ -182,13 +182,6 @@ const Index = () => {
                 delay={index * 150}
               />
             ))}
-          </div>
-          
-          <div className="text-center mt-12 reveal-on-scroll">
-            <Link to="/services" className="group inline-flex items-center text-fe-orange font-medium text-lg">
-              View All Services
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
           </div>
         </div>
       </section>
@@ -252,7 +245,7 @@ const Index = () => {
             <div className="reveal-on-scroll" style={{ animationDelay: '400ms' }}>
               <Link to="/portfolio/3" className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
                 <img 
-                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1171&auto=format&fit=crop" 
+                  src="/assets/Projects/OTUKE/otuke1.jpg" 
                   alt="Institutional building project" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
