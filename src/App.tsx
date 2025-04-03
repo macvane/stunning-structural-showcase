@@ -9,6 +9,8 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Careers from "./pages/Careers";
+import JobDetail from "./pages/JobDetail";
+import JobApplication from "./pages/JobApplication";
 import Contact from "./pages/Contact";
 import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
@@ -37,6 +39,8 @@ const App = () => (
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<JobDetail />} />
+          <Route path="/careers/apply/:id" element={<JobApplication />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<ArticleDetail />} />

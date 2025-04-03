@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MapPin, Clock, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -22,10 +22,35 @@ const CareerPosition: React.FC<CareerPositionProps> = ({
   description,
   delay = 0
 }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+    
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+  
   return (
     <div 
-      className="border border-gray-200 rounded-lg p-6 hover:border-fe-teal transition-all duration-300 reveal-on-scroll"
-      style={{ animationDelay: `${delay}ms` }}
+      ref={cardRef}
+      className="border border-gray-200 rounded-lg p-6 hover:border-fe-teal transition-all duration-300 opacity-0 transform translate-y-4 hover:shadow-lg"
+      style={{ transitionDelay: `${delay}ms` }}
     >
       <h3 className="text-xl font-semibold text-fe-blue mb-3">{title}</h3>
       
@@ -40,7 +65,7 @@ const CareerPosition: React.FC<CareerPositionProps> = ({
         </div>
         <div className="flex items-center text-gray-600">
           <DollarSign className="h-4 w-4 mr-1 text-fe-teal" />
-          {salaryRange}
+          {salaryRange || 'Competitive'}
         </div>
       </div>
       
@@ -48,14 +73,14 @@ const CareerPosition: React.FC<CareerPositionProps> = ({
       
       <div className="flex space-x-3">
         <Link 
-          to={`/careers/${id}`} 
-          className="button-primary"
+          to={`/careers/apply/${id}`} 
+          className="button-primary transition-transform hover:scale-105"
         >
           Apply Now
         </Link>
         <Link 
           to={`/careers/${id}`} 
-          className="button-secondary"
+          className="button-secondary transition-transform hover:scale-105"
         >
           View Details
         </Link>

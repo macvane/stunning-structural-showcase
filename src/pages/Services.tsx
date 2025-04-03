@@ -1,129 +1,183 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
-import { Building2, FileDigit, Ruler, Activity, HardHat, BarChart3, Construction, BadgeCheck, SearchCheck, Cog, Microscope, Wrench } from 'lucide-react';
+import { 
+  Building2, FileDigit, Ruler, Activity, HardHat, BarChart3, Construction, 
+  BadgeCheck, SearchCheck, Cog, Microscope, Wrench, ArrowRight
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
+  // Animation references
+  const titleRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<(HTMLDivElement | null)[]>([]);
+  
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+    
+    servicesRef.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+      servicesRef.current.forEach(ref => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
   // Core services
   const coreServices = [
     {
-      id: 'structural-design',
-      title: 'Structural Design',
-      description: 'Our comprehensive structural design services cover all aspects of building engineering, from conceptual design through construction documentation. We provide innovative and cost-effective solutions for buildings of all types and sizes.',
+      id: 'civil-structural-engineering',
+      title: 'Civil & Structural Engineering',
+      description: 'Our comprehensive engineering services cover all aspects of structural design, from conceptual design through construction documentation. We provide innovative and cost-effective solutions for buildings and infrastructure projects.',
       icon: <Building2 className="h-12 w-12 text-fe-teal" />,
       features: [
-        'Steel, concrete, wood, and masonry design',
+        'Residential and commercial building design',
         'Multi-story building frameworks',
-        'Foundation systems',
+        'Foundation systems and retaining walls',
         'Lateral force-resisting systems',
         'Structural renovation and adaptive reuse'
-      ]
+      ],
+      link: '/services/civil-structural-engineering'
     },
     {
-      id: 'finite-element-analysis',
-      title: 'Finite Element Analysis',
-      description: 'Our advanced finite element analysis capabilities enable us to model complex structural behaviors with precision. We utilize state-of-the-art software to simulate real-world conditions and optimize designs.',
-      icon: <FileDigit className="h-12 w-12 text-fe-teal" />,
+      id: 'structural-consultancy',
+      title: 'Structural Consultancy',
+      description: 'Our expert consultancy services provide valuable insights and solutions for complex structural challenges. We offer professional advice to architects, contractors, and property owners to ensure structural integrity and code compliance.',
+      icon: <SearchCheck className="h-12 w-12 text-fe-teal" />,
       features: [
-        'Non-linear structural analysis',
-        'Dynamic response simulation',
-        'Thermal and vibration analysis',
-        'Composite material modeling',
-        'Stress and strain optimization'
-      ]
+        'Structural condition assessments',
+        'Forensic investigations',
+        'Peer review services',
+        'Code compliance evaluation',
+        'Value engineering'
+      ],
+      link: '/services/structural-consultancy'
     },
     {
-      id: 'building-information-modeling',
-      title: 'BIM Integration',
-      description: 'Our Building Information Modeling services provide comprehensive 3D visualization and coordination for your project. We integrate structural models with architectural and MEP systems to identify and resolve conflicts before construction.',
-      icon: <Ruler className="h-12 w-12 text-fe-teal" />,
-      features: [
-        '3D structural modeling and coordination',
-        'Clash detection and resolution',
-        'Construction sequencing visualization',
-        'Design optimization',
-        'As-built documentation'
-      ]
-    },
-    {
-      id: 'seismic-engineering',
-      title: 'Seismic Engineering',
-      description: 'We specialize in designing structures to withstand seismic forces, ensuring safety and compliance with local building codes. Our seismic engineering services include analysis, design, and retrofit solutions.',
-      icon: <Activity className="h-12 w-12 text-fe-teal" />,
-      features: [
-        'Seismic risk assessment',
-        'Performance-based seismic design',
-        'Building retrofit and strengthening',
-        'Non-linear time history analysis',
-        'Seismic isolation systems'
-      ]
-    },
-    {
-      id: 'construction-support',
-      title: 'Construction Support',
-      description: 'Our construction support services ensure that your project is built according to design specifications. We provide on-site consultation, review shop drawings, and address structural issues that arise during construction.',
+      id: 'project-management',
+      title: 'Project Management',
+      description: 'Our project management services ensure your project is delivered on time, within budget, and to the highest standards. We coordinate all aspects of the project from planning through completion.',
       icon: <HardHat className="h-12 w-12 text-fe-teal" />,
       features: [
-        'Site visits and inspections',
-        'Shop drawing review',
-        'RFI responses',
-        'As-built verification',
-        'Construction sequencing consultation'
-      ]
+        'Schedule development and monitoring',
+        'Budget management and cost control',
+        'Quality assurance and control',
+        'Risk assessment and mitigation',
+        'Stakeholder communication'
+      ],
+      link: '/services/project-management'
     },
     {
-      id: 'performance-based-design',
-      title: 'Performance-Based Design',
-      description: 'Our performance-based design approach focuses on achieving specific performance objectives beyond code minimum requirements. We tailor designs to meet unique project goals, considering factors such as sustainability, resilience, and lifecycle costs.',
-      icon: <BarChart3 className="h-12 w-12 text-fe-teal" />,
+      id: 'steel-fabrication',
+      title: 'Steel Fabrication',
+      description: 'Our steel fabrication services provide custom structural steel elements for construction projects. We manufacture high-quality steel components according to precise specifications.',
+      icon: <Construction className="h-12 w-12 text-fe-teal" />,
       features: [
-        'Custom performance criteria development',
-        'Advanced modeling and simulation',
-        'Risk-based design optimization',
-        'Enhanced resilience strategies',
-        'Life-cycle cost analysis'
-      ]
+        'Custom steel component fabrication',
+        'Structural steel assemblies',
+        'Connection details and hardware',
+        'Quality control and testing',
+        'Installation coordination'
+      ],
+      link: '/services/steel-fabrication'
+    },
+    {
+      id: 'design-build',
+      title: 'Design-Build Services',
+      description: 'Our design-build approach integrates design and construction services under a single contract, streamlining project delivery and improving coordination between design and construction phases.',
+      icon: <Cog className="h-12 w-12 text-fe-teal" />,
+      features: [
+        'Integrated project delivery',
+        'Streamlined communication',
+        'Cost and schedule optimization',
+        'Reduced change orders',
+        'Single-source responsibility'
+      ],
+      link: '/services/design-build'
+    },
+    {
+      id: 'structural-training',
+      title: 'Structural Training',
+      description: 'Our training programs provide professionals with the knowledge and skills needed for structural engineering practice. We offer specialized courses on design codes, software usage, and advanced analysis techniques.',
+      icon: <FileDigit className="h-12 w-12 text-fe-teal" />,
+      features: [
+        'Building code workshops',
+        'Structural software training',
+        'Advanced analysis techniques',
+        'Professional development courses',
+        'Customized training programs'
+      ],
+      link: '/services/structural-training'
     }
   ];
 
   // Additional services
   const additionalServices = [
     {
-      title: 'Forensic Engineering',
-      description: 'Investigation of structural failures and development of remediation strategies.',
-      icon: <Microscope className="h-8 w-8 text-fe-teal" />
+      title: 'Building Information Modeling',
+      description: 'Comprehensive 3D modeling for coordination and visualization of structural systems.',
+      icon: <Ruler className="h-8 w-8 text-fe-teal" />,
+      link: '/services/civil-structural-engineering'
     },
     {
-      title: 'Peer Review',
-      description: 'Independent third-party review of structural designs to ensure quality and compliance.',
-      icon: <SearchCheck className="h-8 w-8 text-fe-teal" />
+      title: 'Seismic Engineering',
+      description: 'Specialized design solutions for structures in seismic zones.',
+      icon: <Activity className="h-8 w-8 text-fe-teal" />,
+      link: '/services/civil-structural-engineering'
+    },
+    {
+      title: 'Performance-Based Design',
+      description: 'Advanced design approach focused on achieving specific performance objectives.',
+      icon: <BarChart3 className="h-8 w-8 text-fe-teal" />,
+      link: '/services/civil-structural-engineering'
     },
     {
       title: 'Structural Health Monitoring',
-      description: 'Implementation of monitoring systems to assess the condition of existing structures.',
-      icon: <BadgeCheck className="h-8 w-8 text-fe-teal" />
+      description: 'Implementation of monitoring systems to assess existing structures.',
+      icon: <BadgeCheck className="h-8 w-8 text-fe-teal" />,
+      link: '/services/structural-consultancy'
     },
     {
-      title: 'Industrial Structures',
-      description: 'Specialized design for manufacturing facilities, warehouses, and process equipment supports.',
-      icon: <Cog className="h-8 w-8 text-fe-teal" />
-    },
-    {
-      title: 'Value Engineering',
-      description: 'Optimization of structural systems to balance cost, constructability, and performance.',
-      icon: <Wrench className="h-8 w-8 text-fe-teal" />
+      title: 'Large Format Printing',
+      description: 'High-quality printing services for construction plans and documents.',
+      icon: <Microscope className="h-8 w-8 text-fe-teal" />,
+      link: '/services/large-format-printing'
     },
     {
       title: 'Temporary Structures',
-      description: 'Design of scaffolding, shoring, and other temporary support systems for construction.',
-      icon: <Construction className="h-8 w-8 text-fe-teal" />
+      description: 'Design of scaffolding, shoring, and other temporary support systems.',
+      icon: <Wrench className="h-8 w-8 text-fe-teal" />,
+      link: '/services/steel-fabrication'
     }
   ];
 
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-fe-blue">
+      <section className="relative pt-32 pb-20 bg-fe-blue overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
             <pattern id="pattern-grid" width="30" height="30" patternUnits="userSpaceOnUse">
@@ -133,10 +187,12 @@ const Services = () => {
           </svg>
         </div>
         
+        <div className="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-fe-teal/30 to-fe-teal/5 blur-3xl"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
-              Our <span className="text-fe-orange">Services</span>
+          <div ref={titleRef} className="max-w-3xl opacity-0 transform translate-y-8">
+            <h1 className="text-white text-4xl md:text-5xl font-bold mb-6 animate-pulse-soft">
+              Our <span className="text-fe-light-blue">Services</span>
             </h1>
             <p className="text-gray-200 text-lg max-w-2xl">
               We provide comprehensive structural engineering solutions tailored to meet the unique requirements of each project, combining technical expertise with innovative approaches.
@@ -148,8 +204,8 @@ const Services = () => {
       {/* Core Services Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-            <span className="text-fe-orange font-medium">What We Offer</span>
+          <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-16 opacity-0 transform translate-y-4">
+            <span className="text-fe-light-blue font-medium">What We Offer</span>
             <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
               Core Engineering Services
             </h2>
@@ -158,33 +214,44 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="space-y-16">
+          <div className="space-y-20">
             {coreServices.map((service, index) => (
               <div 
                 key={service.id} 
                 id={service.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal-on-scroll ${
-                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
+                ref={el => servicesRef.current[index] = el}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center opacity-0 transform ${
+                  index % 2 === 0 ? 'translate-x-10' : '-translate-x-10'
                 }`}
               >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                   <div className="bg-fe-blue bg-opacity-10 p-4 inline-block rounded-lg mb-6">
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-fe-blue mb-4">{service.title}</h3>
                   <p className="text-gray-700 mb-6">{service.description}</p>
                   
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 mb-6">
                     {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-fe-orange mr-2 mt-1">●</span>
+                      <li key={i} className="flex items-start group">
+                        <span className="text-fe-light-blue mr-2 mt-1 transition-transform group-hover:scale-125">●</span>
                         <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
+                  
+                  <Link 
+                    to={service.link}
+                    className="inline-flex items-center text-fe-teal font-medium group"
+                  >
+                    Learn More About This Service
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
+                  </Link>
                 </div>
                 
-                <div className={`rounded-lg overflow-hidden shadow-xl ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`rounded-lg overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] ${
+                  index % 2 === 1 ? 'lg:order-1' : ''
+                }`}>
                   <img 
                     src={`/lovable-uploads/${
                       index % 3 === 0 ? 'd93315b4-7fa2-43fd-9a33-32cb25b60a8a.png' : 
@@ -192,7 +259,7 @@ const Services = () => {
                       '850ee037-d3e1-429c-adb4-1eb8ac43182c.png'
                     }`} 
                     alt={service.title} 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                   />
                 </div>
               </div>
@@ -202,10 +269,12 @@ const Services = () => {
       </section>
       
       {/* Additional Services */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
-            <span className="text-fe-orange font-medium">Beyond The Basics</span>
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="absolute -left-64 -bottom-64 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-fe-light-blue/20 to-fe-light-blue/5 blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16 opacity-0 transform translate-y-4" ref={el => servicesRef.current[servicesRef.current.length] = el}>
+            <span className="text-fe-light-blue font-medium">Beyond The Basics</span>
             <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
               Additional Specialized Services
             </h2>
@@ -216,17 +285,23 @@ const Services = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {additionalServices.map((service, index) => (
-              <div 
+              <Link 
                 key={index} 
-                className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl reveal-on-scroll"
-                style={{ animationDelay: `${index * 100}ms` }}
+                to={service.link}
+                className="bg-white p-6 rounded-lg shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 opacity-0 transform translate-y-4 group"
+                style={{ transitionDelay: `${index * 100}ms` }}
+                ref={el => servicesRef.current[servicesRef.current.length] = el}
               >
-                <div className="bg-fe-blue bg-opacity-10 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <div className="bg-fe-blue bg-opacity-10 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-fe-teal group-hover:bg-opacity-20 transition-all duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-medium text-fe-blue mb-3">{service.title}</h3>
+                <h3 className="text-xl font-medium text-fe-blue mb-3 group-hover:text-fe-teal transition-colors">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
-              </div>
+                <div className="mt-4 text-fe-light-blue opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center">
+                  <span>View service</span>
+                  <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -243,20 +318,23 @@ const Services = () => {
           </svg>
         </div>
         
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white/10 to-transparent"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center reveal-on-scroll">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <div className="max-w-4xl mx-auto text-center opacity-0 transform translate-y-4" ref={el => servicesRef.current[servicesRef.current.length] = el}>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 animate-pulse-soft">
               Need a Custom Engineering Solution?
             </h2>
             <p className="text-gray-100 text-lg mb-8 max-w-2xl mx-auto">
               Our team of experienced engineers is ready to help you with your specific project requirements. Contact us today to discuss how we can bring your vision to life.
             </p>
-            <a 
-              href="/contact" 
-              className="button-primary bg-white text-fe-blue hover:bg-gray-100"
+            <Link 
+              to="/contact" 
+              className="button-primary bg-white text-fe-blue hover:bg-gray-100 transform transition-transform hover:scale-105"
             >
               Request a Consultation
-            </a>
+            </Link>
           </div>
         </div>
       </section>
