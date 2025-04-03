@@ -11,7 +11,7 @@ const ScrollToTop = () => {
         window.scrollTo(0, 0);
     }, [pathname]);
     
-    // Return null instead of void to make it a valid React component
+    // Return null to make it a valid React component
     return null;
 }
 

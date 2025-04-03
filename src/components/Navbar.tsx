@@ -166,13 +166,13 @@ const Navbar: React.FC = () => {
             )}
           </button>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Fixed this section */}
           <div 
-            className={`fixed inset-0 bg-fe-blue bg-opacity-95 flex flex-col justify-center items-center md:hidden transition-opacity duration-300 ${
+            className={`fixed inset-0 bg-fe-blue bg-opacity-95 flex flex-col justify-start md:hidden transition-opacity duration-300 pt-24 ${
               isMobileMenuOpen ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
             }`}
           >
-            <nav className="flex flex-col items-center space-y-6 py-8">
+            <nav className="flex flex-col items-center space-y-6 py-8 overflow-y-auto w-full">
               {/* Home link */}
               <Link
                 to="/"
@@ -193,7 +193,7 @@ const Navbar: React.FC = () => {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="mt-4 w-full flex flex-col items-center space-y-4">
+                  <div className="mt-4 w-full flex flex-col items-center space-y-4 max-h-60 overflow-y-auto pb-2">
                     {serviceLinks.map((service) => (
                       <Link
                         key={service.path}

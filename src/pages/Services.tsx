@@ -194,9 +194,20 @@ const Services = () => {
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-6 animate-pulse-soft">
               Our <span className="text-fe-light-blue">Services</span>
             </h1>
-            <p className="text-gray-200 text-lg max-w-2xl">
+            <p className="text-gray-200 text-lg max-w-2xl mb-8">
               We provide comprehensive structural engineering solutions tailored to meet the unique requirements of each project, combining technical expertise with innovative approaches.
             </p>
+            {/* New hero text section */}
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 animate-fade-in">
+              <h2 className="text-white text-2xl font-semibold mb-3">
+                Expert Engineering Solutions for Every Challenge
+              </h2>
+              <p className="text-gray-200">
+                From complex structural designs to detailed consultancy services, our team of experienced engineers 
+                delivers excellence at every stage of your project. We combine cutting-edge technology with years 
+                of industry expertise to provide solutions that are innovative, cost-effective, and built to last.
+              </p>
+            </div>
           </div>
         </div>
       </section>
