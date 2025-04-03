@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
@@ -337,8 +336,13 @@ const Contact = () => {
           </div>
           
           <div className="rounded-lg overflow-hidden shadow-lg reveal-on-scroll">
-            {/* This would typically be a Google Maps iframe, using a placeholder for now */}
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9484194113184!2d36.921742674182774!3d-1.1964756355329225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3fba2970841f%3A0x27284ed0bb076d86!2sMagunas%20Supermarket%20Kahawa%20Wendani!5e0!3m2!1sen!2ske!4v1743518900775!5m2!1sen!2ske" className='w-full h-[60vh]'  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9484194113184!2d36.921742674182774!3d-1.1964756355329225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3fba2970841f%3A0x27284ed0bb076d86!2sMagunas%20Supermarket%20Kahawa%20Wendani!5e0!3m2!1sen!2ske!4v1743518900775!5m2!1sen!2ske" 
+              className="w-full h-[60vh]"  
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>

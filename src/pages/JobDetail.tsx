@@ -4,7 +4,62 @@ import { useParams, useNavigate } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
 import { MapPin, Clock, DollarSign, ArrowLeft, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { JobOpening } from '@/components/careers/JobOpeningsSection';
+
+// Define the JobOpening interface at the top of the file
+export interface JobOpening {
+  id: string;
+  title: string;
+  location: string;
+  type: string;
+  salaryRange?: string;
+  description: string;
+}
+
+// Job data - moved from the component to make it cleaner
+const jobOpenings: JobOpening[] = [
+  {
+    id: 'senior-structural-engineer',
+    title: 'Senior Structural Engineer',
+    location: 'Nairobi, Kenya',
+    type: 'Full-time',
+    description: 'Lead structural engineering projects, mentor junior staff, and ensure design quality and code compliance for complex buildings and infrastructure.',
+  },
+  {
+    id: 'structural-engineer',
+    title: 'Structural Engineer',
+    location: 'Nairobi, Kenya',
+    type: 'Full-time',
+    description: 'Design structural systems for buildings and infrastructure, prepare calculations and drawings, and coordinate with other disciplines.',
+  },
+  {
+    id: 'bim-specialist',
+    title: 'BIM Specialist',
+    location: 'Nairobi, Kenya',
+    type: 'Full-time',
+    description: 'Create and manage detailed BIM models, coordinate with design teams, and implement BIM standards and protocols.',
+  },
+  {
+    id: 'project-engineer',
+    title: 'Project Engineer',
+    location: 'Nairobi, Kenya',
+    type: 'Full-time',
+    description: 'Coordinate engineering tasks, assist with project planning, monitor progress, and ensure compliance with codes and requirements.',
+  },
+  {
+    id: 'structural-designer',
+    title: 'Structural Designer',
+    location: 'Nairobi, Kenya',
+    type: 'Full-time',
+    description: 'Create detailed structural drawings, assist engineers with calculations, and prepare specifications and quantity takeoffs.',
+  },
+  {
+    id: 'engineering-intern',
+    title: 'Engineering Intern',
+    location: 'Nairobi, Kenya',
+    type: 'Part-time',
+    description: 'Assist engineers with calculations and drawings, learn structural engineering principles, and gain practical experience on real projects.',
+  }
+];
 
 const jobResponsibilities: Record<string, string[]> = {
   'senior-structural-engineer': [
@@ -129,23 +184,17 @@ const JobDetail: React.FC = () => {
   const [job, setJob] = useState<JobOpening | null>(null);
   
   useEffect(() => {
-    // In a real app, this would be a fetch from an API
-    // For now, we'll simulate fetching the job data
-    import('@/components/careers/JobOpeningsSection').then((module) => {
-      const jobOpenings = module.default().props.children.props.children[1].props.children.map(
-        (child: any) => child.props
-      );
-      
-      const foundJob = jobOpenings.find((j: JobOpening) => j.id === id);
-      if (foundJob) {
-        setJob({
-          ...foundJob,
-          salaryRange: salaryRanges[foundJob.id] || 'Competitive'
-        });
-      }
-    }).catch(error => {
-      console.error('Failed to load job openings:', error);
-    });
+    if (!id) return;
+    
+    // Find the job with the matching ID
+    const foundJob = jobOpenings.find((j) => j.id === id);
+    
+    if (foundJob) {
+      setJob({
+        ...foundJob,
+        salaryRange: salaryRanges[foundJob.id] || 'Competitive'
+      });
+    }
   }, [id]);
 
   if (!job) {

@@ -285,23 +285,24 @@ const Services = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {additionalServices.map((service, index) => (
-              <Link 
-                key={index} 
-                to={service.link}
+              <div 
+                key={index}
                 className="bg-white p-6 rounded-lg shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-2 opacity-0 transform translate-y-4 group"
                 style={{ transitionDelay: `${index * 100}ms` }}
                 ref={el => servicesRef.current[servicesRef.current.length] = el}
               >
-                <div className="bg-fe-blue bg-opacity-10 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-fe-teal group-hover:bg-opacity-20 transition-all duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-medium text-fe-blue mb-3 group-hover:text-fe-teal transition-colors">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-                <div className="mt-4 text-fe-light-blue opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center">
-                  <span>View service</span>
-                  <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
+                <Link to={service.link} className="block">
+                  <div className="bg-fe-blue bg-opacity-10 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-fe-teal group-hover:bg-opacity-20 transition-all duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-medium text-fe-blue mb-3 group-hover:text-fe-teal transition-colors">{service.title}</h3>
+                  <p className="text-gray-600">{service.description}</p>
+                  <div className="mt-4 text-fe-light-blue opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center">
+                    <span>View service</span>
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
