@@ -176,7 +176,7 @@ const Services = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section */}
+      {/* Hero Section - Updated to match other pages */}
       <section className="relative pt-32 pb-20 bg-fe-blue overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -187,6 +187,7 @@ const Services = () => {
           </svg>
         </div>
         
+        {/* Add decorative elements similar to other pages */}
         <div className="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-fe-teal/30 to-fe-teal/5 blur-3xl"></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -197,7 +198,6 @@ const Services = () => {
             <p className="text-gray-200 text-lg max-w-2xl mb-8">
               We provide comprehensive structural engineering solutions tailored to meet the unique requirements of each project, combining technical expertise with innovative approaches.
             </p>
-            {/* New hero text section */}
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 animate-fade-in">
               <h2 className="text-white text-2xl font-semibold mb-3">
                 Expert Engineering Solutions for Every Challenge
