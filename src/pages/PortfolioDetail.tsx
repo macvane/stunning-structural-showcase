@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
@@ -28,7 +29,7 @@ const getProjectData = (projectId: string) => {
         'Reduced carbon footprint through material selection',
         'Floor vibration analysis for sensitive tenant equipment'
       ],
-      challenges: 'The site's proximity to a seismic fault line required special consideration in the structural design. Additionally, the client's request for column-free corner offices presented unique structural challenges that were solved through innovative transfer beam systems.',
+      challenges: 'The site\'s proximity to a seismic fault line required special consideration in the structural design. Additionally, the client\'s request for column-free corner offices presented unique structural challenges that were solved through innovative transfer beam systems.',
       results: 'The project was delivered on schedule and within budget, earning recognition for its innovative structural solutions. The building has achieved 95% occupancy within six months of completion.'
     },
     {
