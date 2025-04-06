@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { MapPin, Clock, DollarSign } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface CareerPositionProps {
@@ -8,9 +8,9 @@ interface CareerPositionProps {
   title: string;
   location: string;
   type: 'Full-time' | 'Part-time' | 'Contract' | 'Remote';
-  salaryRange: string;
   description: string;
   delay?: number;
+  salaryRange?: string; // Made optional to maintain compatibility
 }
 
 const CareerPosition: React.FC<CareerPositionProps> = ({
@@ -18,7 +18,6 @@ const CareerPosition: React.FC<CareerPositionProps> = ({
   title,
   location,
   type,
-  salaryRange,
   description,
   delay = 0
 }) => {
@@ -62,10 +61,6 @@ const CareerPosition: React.FC<CareerPositionProps> = ({
         <div className="flex items-center text-gray-600">
           <Clock className="h-4 w-4 mr-1 text-fe-teal" />
           {type}
-        </div>
-        <div className="flex items-center text-gray-600">
-          <DollarSign className="h-4 w-4 mr-1 text-fe-teal" />
-          {salaryRange || 'Competitive'}
         </div>
       </div>
       

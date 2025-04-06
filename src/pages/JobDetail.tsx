@@ -1,9 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
-import { MapPin, Clock, DollarSign, ArrowLeft, FileText } from 'lucide-react';
+import { MapPin, Clock, ArrowLeft, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import JobDetailHero from '@/components/careers/JobDetailHero';
 
 // Define the JobOpening interface at the top of the file
 export interface JobOpening {
@@ -11,7 +11,6 @@ export interface JobOpening {
   title: string;
   location: string;
   type: string;
-  salaryRange?: string;
   description: string;
 }
 
@@ -169,15 +168,6 @@ const jobQualifications: Record<string, string[]> = {
   ]
 };
 
-const salaryRanges: Record<string, string> = {
-  'senior-structural-engineer': '$90,000 - $130,000',
-  'structural-engineer': '$70,000 - $95,000',
-  'bim-specialist': '$65,000 - $90,000',
-  'project-engineer': '$60,000 - $85,000',
-  'structural-designer': '$50,000 - $70,000',
-  'engineering-intern': '$20 - $30 per hour'
-};
-
 const JobDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -190,10 +180,7 @@ const JobDetail: React.FC = () => {
     const foundJob = jobOpenings.find((j) => j.id === id);
     
     if (foundJob) {
-      setJob({
-        ...foundJob,
-        salaryRange: salaryRanges[foundJob.id] || 'Competitive'
-      });
+      setJob(foundJob);
     }
   }, [id]);
 
@@ -211,6 +198,12 @@ const JobDetail: React.FC = () => {
 
   return (
     <PageLayout>
+      <JobDetailHero 
+        title={job.title} 
+        location={job.location} 
+        type={job.type}
+      />
+
       <div className="bg-gray-50 py-12">
         <div className="container mx-auto px-4">
           <Button 
@@ -223,23 +216,6 @@ const JobDetail: React.FC = () => {
           </Button>
           
           <div className="bg-white rounded-lg shadow-md p-8 mb-8 animate-fade-in">
-            <h1 className="text-3xl md:text-4xl font-bold text-fe-blue mb-6">{job.title}</h1>
-            
-            <div className="flex flex-wrap gap-6 mb-8 text-sm">
-              <div className="flex items-center text-gray-600">
-                <MapPin className="h-5 w-5 mr-2 text-fe-teal" />
-                {job.location}
-              </div>
-              <div className="flex items-center text-gray-600">
-                <Clock className="h-5 w-5 mr-2 text-fe-teal" />
-                {job.type}
-              </div>
-              <div className="flex items-center text-gray-600">
-                <DollarSign className="h-5 w-5 mr-2 text-fe-teal" />
-                {job.salaryRange}
-              </div>
-            </div>
-            
             <div className="prose max-w-none mb-8">
               <h2 className="text-xl font-semibold text-fe-blue mb-4">Overview</h2>
               <p className="text-gray-700 mb-6">{job.description}</p>
