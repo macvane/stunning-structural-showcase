@@ -84,7 +84,7 @@ const Portfolio = () => {
     }
   ];
 
-  // Filter projects based on active category
+  // Fixed filter logic - always show projects based on the activeFilter
   const filteredProjects = activeFilter === 'All' 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
