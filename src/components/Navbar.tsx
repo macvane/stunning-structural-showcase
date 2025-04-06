@@ -168,8 +168,8 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu - Fixed this section */}
           <div 
-            className={`fixed inset-0 bg-fe-blue bg-opacity-95 flex flex-col justify-start md:hidden transition-opacity duration-300 pt-24 ${
-              isMobileMenuOpen ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'
+            className={`fixed inset-0 bg-fe-blue bg-opacity-95 flex flex-col justify-start md:hidden transition-opacity duration-300 pt-24  ${
+              isMobileMenuOpen ? 'opacity-100 z-10 h-screen' : 'opacity-0 pointer-events-none '
             }`}
           >
             <nav className="flex flex-col items-center space-y-6 py-8 overflow-y-auto w-full">

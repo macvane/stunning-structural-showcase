@@ -18,39 +18,39 @@ const JobOpeningsSection: React.FC = () => {
     {
       id: 'senior-structural-engineer',
       title: 'Senior Structural Engineer',
-      location: 'San Francisco, CA',
+      location: 'Nairobi, Kenya',
       type: 'Full-time',
-      salaryRange: '$90,000 - $130,000',
+      salaryRange: '',
       description: 'We are seeking an experienced Senior Structural Engineer to lead complex projects from concept to completion. The ideal candidate will have expertise in advanced analysis techniques and a track record of successful project delivery.'
     },
     {
       id: 'structural-engineer',
-      title: 'Structural Engineer',
-      location: 'Boston, MA',
+      title: 'Civil Engineer',
+      location: 'Nairobi, Kenya',
       type: 'Full-time',
       salaryRange: '$70,000 - $95,000',
-      description: 'Join our team as a Structural Engineer responsible for analyzing and designing structural systems for various projects. You\'ll work closely with senior engineers and contribute to innovative design solutions.'
+      description: 'Join our team as a Civil Engineer responsible for analyzing and designing structural systems for various projects. You\'ll work closely with senior engineers and contribute to innovative design solutions.'
     },
     {
       id: 'bim-specialist',
-      title: 'BIM Specialist',
-      location: 'Remote',
+      title: 'Office Assistant',
+      location: 'Nairobi, Kenya',
       type: 'Full-time',
-      salaryRange: '$65,000 - $90,000',
-      description: 'We\'re looking for a Building Information Modeling (BIM) Specialist to enhance our 3D modeling capabilities. You\'ll develop and maintain BIM standards, create detailed structural models, and coordinate with other disciplines.'
+      salaryRange: '',
+      description: 'Seeking a detail-oriented and organized Office Assistant to handle administrative tasks, support daily operations, and ensure smooth office functioning.'
     },
     {
       id: 'project-engineer',
-      title: 'Project Engineer',
-      location: 'Chicago, IL',
+      title: 'Steel Fabricator',
+      location: 'Nairobi, Kenya',
       type: 'Full-time',
       salaryRange: '$60,000 - $85,000',
-      description: 'As a Project Engineer, you\'ll support project managers in delivering structural engineering projects, prepare calculations, develop drawings, and coordinate with clients and contractors.'
+      description: 'As a Steel Fabricator, you will cut, weld, and assemble metal components, interpret blueprints, and ensure high-quality, precise fabrication in a fast-paced environment.'
     },
     {
       id: 'structural-designer',
-      title: 'Structural Designer',
-      location: 'New York, NY',
+      title: 'Driver',
+      location: 'Nairobi, Kenya',
       type: 'Full-time',
       salaryRange: '$50,000 - $70,000',
       description: 'We are seeking a detail-oriented Structural Designer to prepare structural drawings and models, assist with calculations, and contribute to design documentation.'
