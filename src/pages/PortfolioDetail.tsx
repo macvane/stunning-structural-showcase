@@ -1,11 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import PageLayout from '@/components/layouts/PageLayout';
 import { ArrowLeft, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-// This would ideally come from an API or database
 const getProjectData = (projectId: string) => {
   const allProjects = [
     {
@@ -14,10 +13,23 @@ const getProjectData = (projectId: string) => {
       category: 'Commercial',
       location: 'San Francisco, CA',
       imageUrl: 'https://i.pinimg.com/736x/0e/1b/d3/0e1bd3613b49cab584ce34ca41d9e346.jpg',
+      images: [
+        'https://i.pinimg.com/736x/0e/1b/d3/0e1bd3613b49cab584ce34ca41d9e346.jpg',
+        'https://i.pinimg.com/736x/df/a3/f8/dfa3f87709c249a483d716e46e9baf16.jpg',
+        'https://i.pinimg.com/736x/38/e8/2b/38e82bc517c607692a8e929558c80324.jpg'
+      ],
       description: 'A 35-story commercial tower featuring cutting-edge sustainable design and state-of-the-art office spaces. The structural system employs a composite steel frame with concrete core, designed to optimize floor space while providing exceptional seismic performance.',
       completionDate: 'March 2023',
       client: 'Pacific Development Group',
-      scope: 'Full structural engineering services including design, analysis, and construction support.'
+      scope: 'Full structural engineering services including design, analysis, and construction support.',
+      keyFeatures: [
+        'LEED Platinum certified design',
+        'Innovative lateral force resisting system',
+        'Reduced carbon footprint through material selection',
+        'Floor vibration analysis for sensitive tenant equipment'
+      ],
+      challenges: 'The site's proximity to a seismic fault line required special consideration in the structural design. Additionally, the client's request for column-free corner offices presented unique structural challenges that were solved through innovative transfer beam systems.',
+      results: 'The project was delivered on schedule and within budget, earning recognition for its innovative structural solutions. The building has achieved 95% occupancy within six months of completion.'
     },
     {
       id: '2',
@@ -25,10 +37,23 @@ const getProjectData = (projectId: string) => {
       category: 'Infrastructure',
       location: 'Portland, OR',
       imageUrl: 'https://i.pinimg.com/736x/43/c6/9b/43c69bd5ad7050899887aa4d8b611809.jpg',
+      images: [
+        'https://i.pinimg.com/736x/43/c6/9b/43c69bd5ad7050899887aa4d8b611809.jpg',
+        'https://i.pinimg.com/736x/28/3d/ff/283dffc3cd14a04a408b509abaa54c08.jpg',
+        'https://i.pinimg.com/736x/42/49/b1/4249b1466fbe8aab9411240b80b2432a.jpg'
+      ],
       description: 'A 450-foot cable-stayed pedestrian bridge connecting two vibrant neighborhoods across the river. The innovative design features a slender deck supported by asymmetric cables, creating both a functional crossing and an architectural landmark.',
       completionDate: 'August 2022',
       client: 'City of Portland',
-      scope: 'Structural design, analysis, and construction oversight.'
+      scope: 'Structural design, analysis, and construction oversight.',
+      keyFeatures: [
+        'Asymmetric cable-stayed design',
+        'Vibration-damping technology',
+        'LED integrated lighting system',
+        'Weather-resistant deck materials'
+      ],
+      challenges: 'Construction over an active waterway presented significant logistical challenges. Environmental restrictions limited construction methods and timing. The iconic design required precision engineering to ensure stability under dynamic pedestrian loads and wind forces.',
+      results: 'The bridge has become a city landmark, featured in tourism materials, and has increased pedestrian traffic between the previously disconnected neighborhoods by over 200%.'
     },
     {
       id: '3',
@@ -119,7 +144,6 @@ const PortfolioDetail = () => {
   
   useEffect(() => {
     if (id) {
-      // In a real app, this would be an API call
       const projectData = getProjectData(id);
       setProject(projectData);
       setLoading(false);
@@ -191,23 +215,65 @@ const PortfolioDetail = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Project Image */}
+            {/* Project Image Carousel and Description */}
             <div className="lg:col-span-2 reveal-on-scroll">
-              <div className="rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title}
-                  className="w-full h-auto object-cover"
-                />
+              {/* Image Carousel */}
+              <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {project.images?.map((image: string, index: number) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <div className="overflow-hidden rounded-lg">
+                            <img 
+                              src={image} 
+                              alt={`${project.title} - Image ${index + 1}`}
+                              className="w-full h-[400px] object-cover"
+                            />
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex justify-center mt-4">
+                    <CarouselPrevious className="relative mr-4 translate-y-0 left-0" />
+                    <CarouselNext className="relative ml-4 translate-y-0 right-0" />
+                  </div>
+                </Carousel>
               </div>
               
               <div className="mt-8">
                 <h2 className="text-2xl font-bold text-fe-blue mb-4">Project Overview</h2>
-                <p className="text-gray-700">{project.description}</p>
+                <p className="text-gray-700 mb-6">{project.description}</p>
+                
+                {project.keyFeatures && (
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-fe-blue mb-3">Key Features</h3>
+                    <ul className="list-disc pl-5 space-y-1">
+                      {project.keyFeatures.map((feature: string, index: number) => (
+                        <li key={index} className="text-gray-700">{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                
+                {project.challenges && (
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-fe-blue mb-3">Challenges</h3>
+                    <p className="text-gray-700">{project.challenges}</p>
+                  </div>
+                )}
+                
+                {project.results && (
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-fe-blue mb-3">Results</h3>
+                    <p className="text-gray-700">{project.results}</p>
+                  </div>
+                )}
               </div>
             </div>
             
-            {/* Project Info */}
+            {/* Project Info Sidebar */}
             <div className="lg:col-span-1">
               <Card className="shadow-md reveal-on-scroll" style={{ animationDelay: '200ms' }}>
                 <CardContent className="p-6">
