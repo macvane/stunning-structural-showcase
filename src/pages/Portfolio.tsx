@@ -1,8 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
 import ProjectCard from '@/components/ui/ProjectCard';
-import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   // Filter categories
@@ -16,6 +15,11 @@ const Portfolio = () => {
   ];
 
   const [activeFilter, setActiveFilter] = useState('All');
+  const [visibleStats, setVisibleStats] = useState(false);
+  const statsRef = useRef(null);
+  const [projectsCount, setProjectsCount] = useState(0);
+  const [yearsCount, setYearsCount] = useState(0);
+  const [engineersCount, setEngineersCount] = useState(0);
 
   // Projects data
   const projects = [
@@ -84,10 +88,87 @@ const Portfolio = () => {
     }
   ];
 
-  // Fixed filter logic - always show projects based on the activeFilter
+  // Filter logic
   const filteredProjects = activeFilter === 'All' 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
+
+  // Counter animation effect
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleStats(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+    
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+
+  // Increment counters
+  useEffect(() => {
+    if (!visibleStats) return;
+    
+    const projectsTarget = 150;
+    const yearsTarget = 10;
+    const engineersTarget = 30;
+    const duration = 2000; // 2 seconds
+    const frameDuration = 1000 / 60; // 60fps
+    const totalFrames = Math.round(duration / frameDuration);
+    
+    let projectsFrame = 0;
+    let yearsFrame = 0;
+    let engineersFrame = 0;
+    
+    const projectsCounter = setInterval(() => {
+      projectsFrame++;
+      const progress = projectsFrame / totalFrames;
+      setProjectsCount(Math.floor(progress * projectsTarget));
+      
+      if (projectsFrame === totalFrames) {
+        clearInterval(projectsCounter);
+        setProjectsCount(projectsTarget);
+      }
+    }, frameDuration);
+    
+    const yearsCounter = setInterval(() => {
+      yearsFrame++;
+      const progress = yearsFrame / totalFrames;
+      setYearsCount(Math.floor(progress * yearsTarget));
+      
+      if (yearsFrame === totalFrames) {
+        clearInterval(yearsCounter);
+        setYearsCount(yearsTarget);
+      }
+    }, frameDuration);
+    
+    const engineersCounter = setInterval(() => {
+      engineersFrame++;
+      const progress = engineersFrame / totalFrames;
+      setEngineersCount(Math.floor(progress * engineersTarget));
+      
+      if (engineersFrame === totalFrames) {
+        clearInterval(engineersCounter);
+        setEngineersCount(engineersTarget);
+      }
+    }, frameDuration);
+    
+    return () => {
+      clearInterval(projectsCounter);
+      clearInterval(yearsCounter);
+      clearInterval(engineersCounter);
+    };
+  }, [visibleStats]);
 
   return (
     <PageLayout>
@@ -137,15 +218,26 @@ const Portfolio = () => {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <ProjectCard
+              <div
                 key={project.id}
-                id={project.id}
-                title={project.title}
-                category={project.category}
-                location={project.location}
-                imageUrl={project.imageUrl}
-                delay={index * 100}
-              />
+                className="block group overflow-hidden rounded-lg shadow-md reveal-on-scroll"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                  
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal mb-2">{project.category}</span>
+                    <h3 className="text-xl font-semibold mb-1 transition-transform duration-300 group-hover:translate-x-2">{project.title}</h3>
+                    <p className="text-sm text-gray-200">{project.location}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
           
@@ -165,25 +257,21 @@ const Portfolio = () => {
       </section>
       
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section ref={statsRef} className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
             <div className="text-center p-6 reveal-on-scroll">
-              <div className="text-4xl font-bold text-fe-teal mb-2">150+</div>
+              <div className="text-4xl font-bold text-fe-teal mb-2">{projectsCount}+</div>
               <p className="text-gray-700">Projects Completed</p>
             </div>
             <div className="text-center p-6 reveal-on-scroll" style={{ animationDelay: '100ms' }}>
-              <div className="text-4xl font-bold text-fe-teal mb-2">10+</div>
+              <div className="text-4xl font-bold text-fe-teal mb-2">{yearsCount}+</div>
               <p className="text-gray-700">Years of Experience</p>
             </div>
             <div className="text-center p-6 reveal-on-scroll" style={{ animationDelay: '200ms' }}>
-              <div className="text-4xl font-bold text-fe-teal mb-2">30+</div>
+              <div className="text-4xl font-bold text-fe-teal mb-2">{engineersCount}+</div>
               <p className="text-gray-700">Professional Engineers</p>
             </div>
-            {/* <div className="text-center p-6 reveal-on-scroll" style={{ animationDelay: '300ms' }}>
-              <div className="text-4xl font-bold text-fe-teal mb-2">15</div>
-              <p className="text-gray-700">Design Awards</p>
-            </div> */}
           </div>
         </div>
       </section>

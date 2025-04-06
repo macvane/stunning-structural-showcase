@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 interface ProjectCardProps {
   id: string;
@@ -22,8 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   
   return (
-    <Link 
-      to={`/portfolio/${id}`} 
+    <div 
       className="block group overflow-hidden rounded-lg shadow-md reveal-on-scroll"
       style={{ animationDelay: `${delay}ms` }}
       onMouseEnter={() => setIsHovered(true)}
@@ -43,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <p className="text-sm text-gray-200">{location}</p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
