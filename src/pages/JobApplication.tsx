@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -20,6 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from '@emailjs/browser'; // Import EmailJS
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -68,19 +68,59 @@ const JobApplication: React.FC = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, this would send the data to your server
-    console.log(values);
+    // Get the resume file from the file input
+    const resumeFile = document.querySelector("input[type='file']").files[0];
     
-    // Show a success toast notification
-    toast({
-      title: "Application Submitted!",
-      description: "Thank you for applying. We will review your application and contact you soon.",
-    });
-    
-    // Redirect back to careers page after a short delay
-    setTimeout(() => {
-      navigate('/careers');
-    }, 2000);
+    if (!resumeFile) {
+      console.log("No resume file provided");
+      return;
+    }
+  
+    // Prepare form data
+    const templateParams = {
+      fullName: values.fullName,
+      email: values.email,
+      phone: values.phone,
+      website: values.website,
+      coverLetter: values.coverLetter,
+      education: values.education,
+      experience: values.experience,
+      heardAbout: values.heardAbout,
+      resume: resumeFile,  // Attach the file here with the name 'resume'
+    };
+  
+    // Send the email with the form data and resume as an attachment
+    emailjs.send(
+      'service_cjb0big',    // Service ID from EmailJS
+      'template_z3klgel',   // Template ID from EmailJS
+      templateParams,       // The form data and file
+      'Lzv79DVcUbe9hAusV'   // Public key from EmailJS
+    ).then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        
+        // Show a success toast notification
+        toast({
+          title: "Application Submitted!",
+          description: "Thank you for applying. We will review your application and contact you soon.",
+        });
+  
+        // Redirect back to careers page after a short delay
+        setTimeout(() => {
+          navigate('/careers');
+        }, 2000);
+      },
+      (err) => {
+        console.log('FAILED...', err);
+        
+        // Show an error toast notification
+        toast({
+          title: "Submission Failed!",
+          description: "Something went wrong. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    );
   }
   
   const jobTitle = id?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
@@ -158,7 +198,7 @@ const JobApplication: React.FC = () => {
                           <Input placeholder="https://yourportfolio.com" {...field} />
                         </FormControl>
                         <FormDescription>
-                          Share your portfolio, LinkedIn or GitHub profile.
+                          Share your portfolio, LinkedIn, or GitHub profile.
                         </FormDescription>
                         <FormMessage />
                       </FormItem>
