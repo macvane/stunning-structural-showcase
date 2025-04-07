@@ -257,7 +257,7 @@ const JobDetail: React.FC = () => {
                 variant="outline" 
                 className="button-secondary"
                 onClick={() => {
-                  window.location.href = `mailto:careers@finiteelementdesigns.com?subject=Job Inquiry: ${job.title}`;
+                  window.location.href = `mailto:careers@finiteelementdesignsltd.com?subject=Job Inquiry: ${job.title}`;
                 }}
               >
                 Email Us About This Position

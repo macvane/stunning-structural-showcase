@@ -25,10 +25,10 @@ const Portfolio = () => {
   const projects = [
     {
       id: '1',
-      title: 'Azure Tower',
+      title: 'Key West Apartments',
       category: 'Commercial',
       location: 'San Francisco, CA',
-      imageUrl: 'https://i.pinimg.com/736x/0e/1b/d3/0e1bd3613b49cab584ce34ca41d9e346.jpg'
+      imageUrl: 'assets/Projects/KEY WEST APARTMENTS/DSC06699.JPG'
     },
     {
       id: '2',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   // Form state
@@ -58,26 +59,43 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulating form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent Successfully",
-        description: "Thank you for contacting us. We'll get back to you shortly.",
+  
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+      services: formData.services.join(', ')
+    };
+  
+    emailjs
+      .send('service_cjb0big', 'template_9434ewq', templateParams, 'Lzv79DVcUbe9hAusV')
+      .then(() => {
+        toast({
+          title: 'Message Sent Successfully',
+          description: "Thank you for contacting us. We'll get back to you shortly.",
+        });
+  
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          services: []
+        });
+      })
+      .catch(() => {
+        toast({
+          title: 'Message Failed to Send',
+          description: 'Please try again later or contact us directly.',
+          variant: 'destructive'
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        services: []
-      });
-      
-      setIsSubmitting(false);
-    }, 1500);
   };
 
   return (
