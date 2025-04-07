@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import PageLayout from '@/components/layouts/PageLayout';
+import JobApplicationHero from '@/components/careers/JobApplicationHero';
 import { ArrowLeft, Upload, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -86,6 +87,8 @@ const JobApplication: React.FC = () => {
 
   return (
     <PageLayout>
+      <JobApplicationHero title={jobTitle || 'Position'} />
+      
       <div className="bg-gray-50 py-12">
         <div className="container mx-auto px-4">
           <Button 
@@ -98,7 +101,6 @@ const JobApplication: React.FC = () => {
           </Button>
           
           <div className="bg-white rounded-lg shadow-md p-8 mb-8 animate-fade-in">
-            <h1 className="text-3xl font-bold text-fe-blue mb-2">Apply for {jobTitle}</h1>
             <p className="text-gray-600 mb-8">Please fill out the form below to apply for this position.</p>
             
             <Form {...form}>
