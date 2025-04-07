@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Clock } from 'lucide-react';
+import { MapPin, Clock, Building } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface JobApplicationHeroProps {
@@ -25,10 +25,29 @@ const JobApplicationHero: React.FC<JobApplicationHeroProps> = ({ title }) => {
               style={{ animationDelay: '300ms' }}>
             Apply for {title}
           </h1>
-          <p className="text-gray-200 text-lg reveal-on-scroll" 
+          <p className="text-gray-200 text-lg mb-6 reveal-on-scroll" 
              style={{ animationDelay: '500ms' }}>
             Join our team of professionals and contribute to innovative engineering projects.
           </p>
+          
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-5 border border-white/20 reveal-on-scroll" 
+               style={{ animationDelay: '700ms' }}>
+            <h2 className="text-white text-xl font-medium mb-3">About This Position</h2>
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <Building className="h-5 w-5 text-fe-teal mr-2" />
+                <span className="text-gray-100">Department: Engineering</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="h-5 w-5 text-fe-teal mr-2" />
+                <span className="text-gray-100">Location: Nairobi, Kenya (On-site)</span>
+              </div>
+              <div className="flex items-center">
+                <Clock className="h-5 w-5 text-fe-teal mr-2" />
+                <span className="text-gray-100">Full-time position (40 hours/week)</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
