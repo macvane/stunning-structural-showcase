@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -68,8 +69,9 @@ const JobApplication: React.FC = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Get the resume file from the file input
-    const resumeFile = document.querySelector("input[type='file']").files[0];
+    // Get the resume file from the file input with proper type casting
+    const fileInput = document.querySelector("input[type='file']") as HTMLInputElement;
+    const resumeFile = fileInput?.files?.[0];
     
     if (!resumeFile) {
       console.log("No resume file provided");
