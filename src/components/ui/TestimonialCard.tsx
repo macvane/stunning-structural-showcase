@@ -28,7 +28,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   return (
     <div 
       className={cn(
-        "flex flex-col rounded-xl p-6 shadow-lg transition-all reveal-on-scroll",
+        "flex flex-col rounded-xl p-6 shadow-lg transition-all reveal-on-scroll hover:-translate-y-4 duration-500 ease-in-out",
         isFeatured 
           ? "bg-fe-blue text-white border border-fe-light-teal/30" 
           : "bg-white border border-gray-100",

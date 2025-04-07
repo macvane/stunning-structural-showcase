@@ -188,7 +188,7 @@ const Services = () => {
         </div>
         
         {/* Add decorative elements similar to other pages */}
-        <div className="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-fe-teal/30 to-fe-teal/5 blur-3xl"></div>
+        <div className="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-fe-teal/30 to-fe-teal/5 blur-3xl overflow-hidden"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div ref={titleRef} className="max-w-3xl opacity-0 transform translate-y-8">

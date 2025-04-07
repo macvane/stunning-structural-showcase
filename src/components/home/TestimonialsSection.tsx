@@ -12,8 +12,7 @@ const TestimonialsSection = () => {
       author: "James Wilson",
       position: "Project Manager",
       company: "Construct International",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+      rating: 5
     },
     {
       quote: "The team's technical expertise and attention to detail throughout our complex infrastructure project was exceptional. Their solutions were both elegant and practical.",
@@ -21,15 +20,13 @@ const TestimonialsSection = () => {
       position: "Director of Operations",
       company: "Nairobi Urban Development",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&h=300&fit=crop",
     },
     {
       quote: "Working with Finite Element Designs has been a game-changer for our residential development projects. Their structural designs are not only sound but also innovative and cost-effective.",
       author: "David Muthoni",
       position: "CEO",
       company: "Eastlands Homes Ltd",
-      rating: 4,
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop",
+      rating: 4
     },
   ];
 
@@ -66,7 +63,6 @@ const TestimonialsSection = () => {
               position={testimonial.position}
               company={testimonial.company}
               rating={testimonial.rating}
-              image={testimonial.image}
               variant={index === 1 ? 'featured' : 'default'}
               delay={index * 150}
             />
