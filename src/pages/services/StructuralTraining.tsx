@@ -133,13 +133,6 @@ const StructuralTraining = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-fe-blue bg-opacity-5 p-8 rounded-lg border border-fe-teal border-opacity-20">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop"
-                  alt="Testimonial"
-                  className="w-full h-full object-cover"
-                />
-              </div>
               <div>
                 <p className="text-gray-700 italic mb-4">
                   "The Prokon training program at Finite Element Designs has transformed our approach to structural analysis. The practical skills we gained have significantly improved our efficiency and accuracy in project delivery."

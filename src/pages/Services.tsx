@@ -264,10 +264,10 @@ const Services = () => {
                   index % 2 === 1 ? 'lg:order-1' : ''
                 }`}>
                   <img 
-                    src={`/lovable-uploads/${
-                      index % 3 === 0 ? 'd93315b4-7fa2-43fd-9a33-32cb25b60a8a.png' : 
-                      index % 3 === 1 ? 'aeb304dd-e51e-4c82-87d5-1d997a4858d0.png' : 
-                      '850ee037-d3e1-429c-adb4-1eb8ac43182c.png'
+                    src={`/assets/${
+                      index % 3 === 0 ? 'image2.jfif' : 
+                      index % 3 === 1 ? 'image3.jfif' : 
+                      'image4.jfif' 
                     }`} 
                     alt={service.title} 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
