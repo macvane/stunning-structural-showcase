@@ -66,16 +66,33 @@ const Articles = () => {
   return (
     <PageLayout>
       {/* Articles Hero Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center reveal-on-scroll">
-            <div className="inline-flex items-center justify-center p-3 bg-fe-blue bg-opacity-10 rounded-full mb-6">
-              <Newspaper className="h-7 w-7 text-fe-teal" />
+      <section className="relative py-32 bg-fe-blue">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop" 
+            alt="Engineering blueprints and models" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-fe-blue opacity-80"></div>
+        </div>
+        <div className="absolute inset-0 opacity-10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <pattern id="pattern-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="white" strokeWidth="1"/>
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#pattern-grid)" />
+          </svg>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl text-center mx-auto reveal-on-scroll">
+            <div className="inline-flex items-center justify-center p-3 bg-white bg-opacity-10 rounded-full mb-6 backdrop-blur-sm border border-white border-opacity-20">
+              <Newspaper className="h-7 w-7 text-fe-light-teal" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-fe-blue mb-6">
-              Engineering Insights & Articles
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in opacity-0" style={{ animationDelay: '300ms' }}>
+              Engineering <span className="text-fe-light-teal">Insights</span> & Resources
             </h1>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto animate-fade-in opacity-0" style={{ animationDelay: '500ms' }}>
               Stay informed with the latest trends, innovations, and best practices in structural engineering through our collection of thought leadership articles.
             </p>
           </div>
