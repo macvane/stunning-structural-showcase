@@ -20,7 +20,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   position,
   company,
   rating,
-  image,
   delay = 0,
   variant = 'default',
 }) => {
@@ -63,30 +62,19 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </div>
       
       {/* Author */}
-      <div className="mt-auto flex items-center">
-        {image && (
-          <div className="mr-3">
-            <img 
-              src={image} 
-              alt={author} 
-              className="w-12 h-12 rounded-full object-cover border-2 border-gray-200" 
-            />
-          </div>
-        )}
-        <div>
-          <h4 className={cn(
-            "font-bold",
-            isFeatured ? "text-white" : "text-fe-blue"
-          )}>
-            {author}
-          </h4>
-          <p className={cn(
-            "text-sm",
-            isFeatured ? "text-gray-200" : "text-gray-600"
-          )}>
-            {position}, {company}
-          </p>
-        </div>
+      <div className="mt-auto">
+        <h4 className={cn(
+          "font-bold",
+          isFeatured ? "text-white" : "text-fe-blue"
+        )}>
+          {author}
+        </h4>
+        <p className={cn(
+          "text-sm",
+          isFeatured ? "text-gray-200" : "text-gray-600"
+        )}>
+          {position}, {company}
+        </p>
       </div>
     </div>
   );
