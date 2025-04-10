@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
@@ -60,42 +61,48 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
   
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      subject: formData.subject,
-      message: formData.message,
-      services: formData.services.join(', ')
-    };
-  
-    emailjs
-      .send('service_cjb0big', 'template_9434ewq', templateParams, 'Lzv79DVcUbe9hAusV')
-      .then(() => {
-        toast({
-          title: 'Message Sent Successfully',
-          description: "Thank you for contacting us. We'll get back to you shortly.",
-        });
-  
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-          services: []
-        });
-      })
-      .catch(() => {
-        toast({
-          title: 'Message Failed to Send',
-          description: 'Please try again later or contact us directly.',
-          variant: 'destructive'
-        });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+    const formData = new FormData();
+    
+    formData.append('fullName', formData.name);
+    formData.append('email', formData.email);
+    formData.append('phone', formData.phone);
+    formData.append('subject', formData.subject);
+    formData.append('message', formData.message);
+    formData.append('services', formData.services.join(', '));
+    formData.append('sheet', 'Sheet2'); // Specify Sheet2 for contact submissions
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby7foLssvGgEnk3_3zVoYoaJa499OEblhFgqEBD8022wSMbIyUo-W5Sy4zb5ArUT-xM/exec';
+    
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: formData,
+      mode: 'no-cors'
+    })
+    .then(() => {
+      toast({
+        title: 'Message Sent Successfully',
+        description: "Thank you for contacting us. We'll get back to you shortly.",
       });
+  
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        services: []
+      });
+    })
+    .catch(() => {
+      toast({
+        title: 'Message Failed to Send',
+        description: 'Please try again later or contact us directly.',
+        variant: 'destructive'
+      });
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
   };
 
   return (

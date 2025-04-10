@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -87,6 +88,7 @@ const JobApplication: React.FC = () => {
     formData.append('experience', values.experience);
     formData.append('heardAbout', values.heardAbout);
     formData.append('position', id?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) || 'Unknown Position');
+    formData.append('sheet', 'Sheet1'); // Specify Sheet1 for job applications
     
     const scriptURL = 'https://script.google.com/macros/s/AKfycby7foLssvGgEnk3_3zVoYoaJa499OEblhFgqEBD8022wSMbIyUo-W5Sy4zb5ArUT-xM/exec';
     
