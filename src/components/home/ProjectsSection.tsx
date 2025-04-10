@@ -30,7 +30,7 @@ const ProjectsSection = () => {
           <div className="reveal-on-scroll">
             <div className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
               <img 
-                src="https://finiteelementdesignsltd.com/static/media/DSC06699.fbc3e16850fcf73a2831.JPG" 
+                src="/assets/Projects/KEY WEST APARTMENTS/DSC06700.JPG" 
                 alt="Commercial high-rise project" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
@@ -46,7 +46,7 @@ const ProjectsSection = () => {
           <div className="reveal-on-scroll" style={{ animationDelay: '200ms' }}>
             <div className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
               <img 
-                src="https://finiteelementdesignsltd.com/static/media/IMG_20190828_094248.581ab50b414ce00eeaad.jpg" 
+                src="/assets/Projects/RICHMOND SUITES/IMG_20190828_094248.jpg" 
                 alt="Bridge engineering project" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
