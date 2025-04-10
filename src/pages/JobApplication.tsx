@@ -91,8 +91,8 @@ const JobApplication: React.FC = () => {
     formData.append('heardAbout', values.heardAbout);
     formData.append('position', id?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) || 'Unknown Position');
     
-    // Google Apps Script Web App URL - Replace with your actual script URL
-    const scriptURL = 'GOOGLE_SCRIPT_URL_HERE';
+    // Google Apps Script Web App URL - Using the provided URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby7foLssvGgEnk3_3zVoYoaJa499OEblhFgqEBD8022wSMbIyUo-W5Sy4zb5ArUT-xM/exec';
     
     // Send the form data to Google Sheets
     fetch(scriptURL, { 
