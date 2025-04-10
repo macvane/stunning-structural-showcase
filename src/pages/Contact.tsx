@@ -61,21 +61,21 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
   
-    const formData = new FormData();
+    const formDataToSend = new FormData();
     
-    formData.append('fullName', formData.name);
-    formData.append('email', formData.email);
-    formData.append('phone', formData.phone);
-    formData.append('subject', formData.subject);
-    formData.append('message', formData.message);
-    formData.append('services', formData.services.join(', '));
-    formData.append('sheet', 'Sheet2'); // Specify Sheet2 for contact submissions
+    formDataToSend.append('fullName', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('subject', formData.subject);
+    formDataToSend.append('message', formData.message);
+    formDataToSend.append('services', formData.services.join(', '));
+    formDataToSend.append('sheet', 'Sheet2'); // Specify Sheet2 for contact submissions
     
     const scriptURL = 'https://script.google.com/macros/s/AKfycby7foLssvGgEnk3_3zVoYoaJa499OEblhFgqEBD8022wSMbIyUo-W5Sy4zb5ArUT-xM/exec';
     
     fetch(scriptURL, { 
       method: 'POST', 
-      body: formData,
+      body: formDataToSend,
       mode: 'no-cors'
     })
     .then(() => {
