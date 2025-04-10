@@ -70,6 +70,7 @@ const Contact = () => {
     formDataToSend.append('message', formData.message);
     formDataToSend.append('services', formData.services.join(', '));
     formDataToSend.append('sheet', 'Sheet2'); // Specify Sheet2 for contact submissions
+    formDataToSend.append('targetSheet', 'Sheet2'); // Add an alternative parameter name that the script might be looking for
     
     const scriptURL = 'https://script.google.com/macros/s/AKfycby7foLssvGgEnk3_3zVoYoaJa499OEblhFgqEBD8022wSMbIyUo-W5Sy4zb5ArUT-xM/exec';
     
