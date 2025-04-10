@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import PageLayout from '@/components/layouts/PageLayout';
 import JobApplicationHero from '@/components/careers/JobApplicationHero';
-import { ArrowLeft, Upload, Send } from 'lucide-react';
+import { ArrowLeft, Link, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -20,7 +20,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import emailjs from '@emailjs/browser'; // Import EmailJS
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -35,6 +34,11 @@ const formSchema = z.object({
   website: z.string().url({
     message: "Please enter a valid URL.",
   }).optional().or(z.literal('')),
+  resumeLink: z.string().url({
+    message: "Please enter a valid Google Drive URL.",
+  }).refine((url) => url.includes('drive.google.com'), {
+    message: "Please provide a Google Drive link.",
+  }),
   coverLetter: z.string().min(100, {
     message: "Cover letter should be at least 100 characters.",
   }),
@@ -61,6 +65,7 @@ const JobApplication: React.FC = () => {
       email: "",
       phone: "",
       website: "",
+      resumeLink: "",
       coverLetter: "",
       education: "",
       experience: "",
@@ -69,60 +74,56 @@ const JobApplication: React.FC = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Get the resume file from the file input with proper type casting
-    const fileInput = document.querySelector("input[type='file']") as HTMLInputElement;
-    const resumeFile = fileInput?.files?.[0];
+    console.log("Form values to be submitted:", values);
     
-    if (!resumeFile) {
-      console.log("No resume file provided");
-      return;
-    }
-  
-    // Prepare form data
-    const templateParams = {
-      fullName: values.fullName,
-      email: values.email,
-      phone: values.phone,
-      website: values.website,
-      coverLetter: values.coverLetter,
-      education: values.education,
-      experience: values.experience,
-      heardAbout: values.heardAbout,
-      resume: resumeFile,  // Attach the file here with the name 'resume'
-    };
-  
-    // Send the email with the form data and resume as an attachment
-    emailjs.send(
-      'service_cjb0big',    // Service ID from EmailJS
-      'template_z3klgel',   // Template ID from EmailJS
-      templateParams,       // The form data and file
-      'Lzv79DVcUbe9hAusV'   // Public key from EmailJS
-    ).then(
-      (response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        
-        // Show a success toast notification
-        toast({
-          title: "Application Submitted!",
-          description: "Thank you for applying. We will review your application and contact you soon.",
-        });
-  
-        // Redirect back to careers page after a short delay
-        setTimeout(() => {
-          navigate('/careers');
-        }, 2000);
-      },
-      (err) => {
-        console.log('FAILED...', err);
-        
-        // Show an error toast notification
-        toast({
-          title: "Submission Failed!",
-          description: "Something went wrong. Please try again later.",
-          variant: "destructive",
-        });
-      }
-    );
+    // Create a new FormData object to send to Google Sheets
+    const formData = new FormData();
+    
+    // Add all form values to the FormData
+    formData.append('fullName', values.fullName);
+    formData.append('email', values.email);
+    formData.append('phone', values.phone);
+    formData.append('website', values.website || '');
+    formData.append('resumeLink', values.resumeLink);
+    formData.append('coverLetter', values.coverLetter);
+    formData.append('education', values.education);
+    formData.append('experience', values.experience);
+    formData.append('heardAbout', values.heardAbout);
+    formData.append('position', id?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) || 'Unknown Position');
+    
+    // Google Apps Script Web App URL - Replace with your actual script URL
+    const scriptURL = 'GOOGLE_SCRIPT_URL_HERE';
+    
+    // Send the form data to Google Sheets
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: formData,
+      mode: 'no-cors'
+    })
+    .then(response => {
+      console.log('Success!', response);
+      
+      // Show a success toast notification
+      toast({
+        title: "Application Submitted!",
+        description: "Thank you for applying. We will review your application and contact you soon.",
+      });
+
+      // Redirect back to careers page after a short delay
+      setTimeout(() => {
+        navigate('/careers');
+      }, 2000);
+    })
+    .catch(error => {
+      console.error('Error!', error);
+      
+      // Show an error toast notification
+      toast({
+        title: "Submission Failed!",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    });
   }
   
   const jobTitle = id?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
@@ -210,6 +211,23 @@ const JobApplication: React.FC = () => {
                 
                 <FormField
                   control={form.control}
+                  name="resumeLink"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Resume/CV Google Drive Link *</FormLabel>
+                      <FormControl>
+                        <Input placeholder="https://drive.google.com/file/d/..." {...field} />
+                      </FormControl>
+                      <FormDescription>
+                        Please upload your resume to Google Drive and share the link here. Make sure the document is accessible to anyone with the link.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
                   name="coverLetter"
                   render={({ field }) => (
                     <FormItem>
@@ -275,26 +293,6 @@ const JobApplication: React.FC = () => {
                     </FormItem>
                   )}
                 />
-                
-                <div className="border border-dashed border-gray-300 rounded-md p-6 bg-gray-50">
-                  <div className="flex items-center mb-4">
-                    <Upload className="h-5 w-5 text-fe-teal mr-2" />
-                    <h3 className="text-lg font-medium text-fe-blue">Resume/CV Upload</h3>
-                  </div>
-                  <p className="text-gray-600 mb-4 text-sm">
-                    Please upload your resume or CV in PDF, DOC, or DOCX format. Maximum file size: 5MB.
-                  </p>
-                  <div className="flex items-center">
-                    <Input 
-                      type="file" 
-                      className="max-w-sm"
-                      accept=".pdf,.doc,.docx"
-                    />
-                  </div>
-                  <p className="text-gray-500 text-xs mt-2">
-                    Note: File upload is not functional in this demo. In a production environment, this would upload your file.
-                  </p>
-                </div>
                 
                 <div className="flex justify-end">
                   <Button type="submit" className="button-primary flex items-center">
