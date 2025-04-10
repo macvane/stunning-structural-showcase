@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -35,9 +34,9 @@ const formSchema = z.object({
     message: "Please enter a valid URL.",
   }).optional().or(z.literal('')),
   resumeLink: z.string().url({
-    message: "Please enter a valid Google Drive URL.",
-  }).refine((url) => url.includes('drive.google.com'), {
-    message: "Please provide a Google Drive link.",
+    message: "Please enter a valid Google Drive or Google Docs URL.",
+  }).refine((url) => url.includes('drive.google.com') || url.includes('docs.google.com'), {
+    message: "Please provide a Google Drive or Google Docs link.",
   }),
   coverLetter: z.string().min(100, {
     message: "Cover letter should be at least 100 characters.",
@@ -76,10 +75,8 @@ const JobApplication: React.FC = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log("Form values to be submitted:", values);
     
-    // Create a new FormData object to send to Google Sheets
     const formData = new FormData();
     
-    // Add all form values to the FormData
     formData.append('fullName', values.fullName);
     formData.append('email', values.email);
     formData.append('phone', values.phone);
@@ -91,10 +88,8 @@ const JobApplication: React.FC = () => {
     formData.append('heardAbout', values.heardAbout);
     formData.append('position', id?.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) || 'Unknown Position');
     
-    // Google Apps Script Web App URL - Using the provided URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycby7foLssvGgEnk3_3zVoYoaJa499OEblhFgqEBD8022wSMbIyUo-W5Sy4zb5ArUT-xM/exec';
     
-    // Send the form data to Google Sheets
     fetch(scriptURL, { 
       method: 'POST', 
       body: formData,
@@ -103,13 +98,11 @@ const JobApplication: React.FC = () => {
     .then(response => {
       console.log('Success!', response);
       
-      // Show a success toast notification
       toast({
         title: "Application Submitted!",
         description: "Thank you for applying. We will review your application and contact you soon.",
       });
 
-      // Redirect back to careers page after a short delay
       setTimeout(() => {
         navigate('/careers');
       }, 2000);
@@ -117,7 +110,6 @@ const JobApplication: React.FC = () => {
     .catch(error => {
       console.error('Error!', error);
       
-      // Show an error toast notification
       toast({
         title: "Submission Failed!",
         description: "Something went wrong. Please try again later.",
@@ -214,12 +206,12 @@ const JobApplication: React.FC = () => {
                   name="resumeLink"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Resume/CV Google Drive Link *</FormLabel>
+                      <FormLabel>Resume/CV Google Drive or Docs Link *</FormLabel>
                       <FormControl>
-                        <Input placeholder="https://drive.google.com/file/d/..." {...field} />
+                        <Input placeholder="https://drive.google.com/file/d/... OR https://docs.google.com/document/d/..." {...field} />
                       </FormControl>
                       <FormDescription>
-                        Please upload your resume to Google Drive and share the link here. Make sure the document is accessible to anyone with the link.
+                        Please upload your resume to Google Drive/Docs and share the link here. Make sure the document is accessible to anyone with the link.
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
