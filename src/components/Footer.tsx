@@ -64,19 +64,25 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services#structural-design" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Structural Design</Link>
+                <Link to="/services/civil-structural-engineering" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Civil & Structural Engineering</Link>
               </li>
               <li>
-                <Link to="/services#finite-element-analysis" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Finite Element Analysis</Link>
+                <Link to="/services/structural-training" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Structural Engineering Training</Link>
               </li>
               <li>
-                <Link to="/services#building-information-modeling" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Building Information Modeling</Link>
+                <Link to="/services/structural-consultancy" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Structural Engineering Consultancy</Link>
               </li>
               <li>
-                <Link to="/services#seismic-engineering" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Seismic Engineering</Link>
+                <Link to="/services/project-management" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Project Management</Link>
               </li>
               <li>
-                <Link to="/services#construction-support" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Construction Support</Link>
+                <Link to="/services/steel-fabrication" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Steel Fabrication</Link>
+              </li>
+              <li>
+                <Link to="/services/large-format-printing" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Large Format Printing</Link>
+              </li>
+              <li>
+                <Link to="/services/design-build" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">Design Build</Link>
               </li>
             </ul>
           </div>

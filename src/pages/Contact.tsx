@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import PageLayout from '@/components/layouts/PageLayout';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   // Form state
