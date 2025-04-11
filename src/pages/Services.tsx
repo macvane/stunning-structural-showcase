@@ -176,7 +176,7 @@ const Services = () => {
 
   return (
     <PageLayout>
-      {/* Hero Section - Updated to match other pages */}
+      {/* Hero Section - Updated to display properly */}
       <section className="relative pt-32 pb-20 bg-fe-blue overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
@@ -191,14 +191,14 @@ const Services = () => {
         <div className="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-fe-teal/30 to-fe-teal/5 blur-3xl overflow-hidden"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div ref={titleRef} className="max-w-3xl opacity-0 transform translate-y-8">
+          <div className="max-w-3xl animate-fade-in">
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-6 animate-pulse-soft">
               Our <span className="text-fe-light-blue">Services</span>
             </h1>
             <p className="text-gray-200 text-lg max-w-2xl mb-8">
               We provide comprehensive structural engineering solutions tailored to meet the unique requirements of each project, combining technical expertise with innovative approaches.
             </p>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 animate-fade-in">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
               <h2 className="text-white text-2xl font-semibold mb-3">
                 Expert Engineering Solutions for Every Challenge
               </h2>
@@ -215,7 +215,7 @@ const Services = () => {
       {/* Core Services Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-16 opacity-0 transform translate-y-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
             <span className="text-fe-light-blue font-medium">What We Offer</span>
             <h2 className="text-3xl md:text-4xl font-bold text-fe-blue mt-2 mb-6">
               Core Engineering Services

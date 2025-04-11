@@ -7,7 +7,7 @@ const AnimatedLogo: React.FC = () => {
       <img 
         src="/logo.jpg" 
         alt="Finite Element Designs Ltd Logo" 
-        className="h-12 sm:h-14 w-auto hover:scale-105 transition-transform duration-300"
+        className="h-12 sm:h-14 w-auto hover:scale-110 transition-transform duration-500 shadow-lg rounded-md"
       />
     </div>
   );
