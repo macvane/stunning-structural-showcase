@@ -89,7 +89,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="reveal-on-scroll">
               <img 
-                src="/assets/Officials/atai.jpg" 
+                src="/v2 projects/image34.jpg" 
                 alt="Finite Element Designs headquarters" 
                 className="w-full h-auto md:h-[39rem] rounded-lg shadow-xl object-cover object-top" 
               />

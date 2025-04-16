@@ -26,66 +26,109 @@ const Portfolio = () => {
     {
       id: '1',
       title: 'Key West Apartments',
-      category: 'Commercial',
-      location: 'San Francisco, CA',
+      category: 'Residential',
+      location: 'Key West, NA',
       imageUrl: 'assets/Projects/KEY WEST APARTMENTS/DSC06699.JPG'
     },
     {
       id: '2',
-      title: 'Riverfront Bridge',
-      category: 'Infrastructure',
-      location: 'Portland, OR',
-      imageUrl: 'https://i.pinimg.com/736x/43/c6/9b/43c69bd5ad7050899887aa4d8b611809.jpg'
+      title: 'Hays Suites Hotel',
+      category: 'Real Estate',
+      location: 'Kilimani, Wool Avenue',
+      imageUrl: '/v2 projects/image8.jpg'
     },
     {
       id: '3',
-      title: 'Science Innovation Center',
+      title: 'Wool Avenue Hotel',
       category: 'Institutional',
-      location: 'Boston, MA',
-      imageUrl: 'https://i.pinimg.com/736x/84/18/09/841809fbb44ad69ef93da6bffebfb02e.jpg'
+      location: 'Kilimani, Wool Avenue',
+      imageUrl: '/v2 projects/image13.jpg'
     },
     {
       id: '4',
-      title: 'Skyline Residences',
-      category: 'Residential',
-      location: 'Chicago, IL',
-      imageUrl: 'https://i.pinimg.com/736x/3c/42/37/3c4237d030e8cdf4777b42cc7c59bd65.jpg'
+      title: 'Cradle Hotel',
+      category: 'Recreational',
+      location: 'Kakuma, Turkana',
+      imageUrl: '/v2 projects/image18.jpg'
     },
     {
       id: '5',
-      title: 'Manufacturing Facility',
-      category: 'Industrial',
-      location: 'Detroit, MI',
-      imageUrl: 'https://i.pinimg.com/736x/42/49/b1/4249b1466fbe8aab9411240b80b2432a.jpg'
+      title: 'Residential at Kiambu',
+      category: 'Residential',
+      location: 'Mwihoko, Kiambu',
+      imageUrl: '/v2 projects/image10.jpg'
     },
     {
       id: '6',
-      title: 'Harbor Point Tower',
-      category: 'Commercial',
-      location: 'New York, NY',
-      imageUrl: 'https://i.pinimg.com/736x/df/a3/f8/dfa3f87709c249a483d716e46e9baf16.jpg'
+      title: 'Affordable Housing Inspection',
+      category: 'Residential',
+      location: 'Alego, Usonga',
+      imageUrl: '/v2 projects/image22.jpg'
     },
     {
       id: '7',
-      title: 'Ocean View Apartments',
+      title: 'Residential Home',
       category: 'Residential',
-      location: 'Miami, FL',
-      imageUrl: 'https://i.pinimg.com/736x/38/e8/2b/38e82bc517c607692a8e929558c80324.jpg'
+      location: ' Kagwe, Githinguri',
+      imageUrl: '/v2 projects/image11.jpg'
     },
     {
       id: '8',
-      title: 'Coastal Highway Bridge',
+      title: 'Raft Foundation Works',
       category: 'Infrastructure',
-      location: 'Seattle, WA',
-      imageUrl: 'https://i.pinimg.com/736x/28/3d/ff/283dffc3cd14a04a408b509abaa54c08.jpg'
+      location: 'Cornerstone SDA Church, Nairobi',
+      imageUrl: '/v2 projects/image28.jpg'
     },
     {
       id: '9',
-      title: 'University Research Center',
-      category: 'Institutional',
-      location: 'Austin, TX',
-      imageUrl: 'https://i.pinimg.com/736x/ea/08/a0/ea08a08ce9eb06dd1151916b12ce90a3.jpg'
+      title: 'Otuke Residential Home',
+      category: 'Residential',
+      location: 'Otuke, Uganda',
+      imageUrl: '/v2 projects/image30.jpg'
+    },
+    {
+      id: '10',
+      title: 'Hays Suites Hotel',
+      category: 'Residential',
+      location: 'Wool Avenue, Kilimani',
+      imageUrl: '/v2 projects/image6.jpg'
+    },
+    {
+      id: '11',
+      title: 'Imperial Suites',
+      category: 'Residential',
+      location: 'Ruiru, Kiambu',
+      imageUrl: '/v2 projects/image23.jpg'
+    },
+    {
+      id: '12',
+      title: 'Residential Home',
+      category: 'Residential',
+      location: 'Mwihoko, Kiambu',
+      imageUrl: '/v2 projects/image25.jpg'
+    },
+    {
+      id: '13',
+      title: 'Residential Home',
+      category: 'Residential',
+      location: 'Nairobi',
+      imageUrl: '/v2 projects/image35.jpg'
+    },
+    {
+      id: '14',
+      title: 'Lenana Residential Buildings',
+      category: 'Residential',
+      location: 'Lenana, Nairobi',
+      imageUrl: '/v2 projects/image32.JPG'
+    },
+    {
+      id: '15',
+      title: 'Cradle Hotel',
+      category: 'Commercial',
+      location: 'Kakuma, Turkana',
+      imageUrl: '/v2 projects/image17.jpg'
     }
+
   ];
 
   // Filter logic

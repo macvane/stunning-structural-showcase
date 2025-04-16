@@ -46,15 +46,15 @@ const ProjectsSection = () => {
           <div className="reveal-on-scroll" style={{ animationDelay: '200ms' }}>
             <div className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
               <img 
-                src="/assets/Projects/RICHMOND SUITES/IMG_20190828_094248.jpg" 
+                src="/v2 projects/image10.jpg" 
                 alt="Bridge engineering project" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-fe-blue via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
               <div className="absolute bottom-0 left-0 p-6 text-white">
-                <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Infrastructure</span>
-                <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Richmond Suites</h3>
-                <p className="text-sm text-gray-200">Richmond, OR</p>
+                <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Residential</span>
+                <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Residential Home</h3>
+                <p className="text-sm text-gray-200">Mwihoko, Kiambu</p>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ const ProjectsSection = () => {
           <div className="reveal-on-scroll" style={{ animationDelay: '400ms' }}>
             <div className="group block relative rounded-lg overflow-hidden shadow-lg h-80">
               <img 
-                src="/assets/Projects/OTUKE/otuke1.jpg" 
+                src="/v2 projects/image3.jpg" 
                 alt="Institutional building project" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
@@ -70,7 +70,7 @@ const ProjectsSection = () => {
               <div className="absolute bottom-0 left-0 p-6 text-white">
                 <span className="text-sm font-medium uppercase tracking-wider text-fe-light-teal">Residential</span>
                 <h3 className="text-xl font-semibold mt-1 transition-transform duration-300 group-hover:translate-x-2">Otuke Residential Home</h3>
-                <p className="text-sm text-gray-200">Otuke, MA</p>
+                <p className="text-sm text-gray-200">Wool Avenue, Kilimani</p>
               </div>
             </div>
           </div>
