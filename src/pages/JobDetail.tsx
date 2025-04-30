@@ -257,7 +257,7 @@ const JobDetail: React.FC = () => {
                 variant="outline" 
                 className="button-secondary"
                 onClick={() => {
-                  window.location.href = `mailto:careers@finiteelementdesignsltd.com?subject=Job Inquiry: ${job.title}`;
+                  window.location.href = `mailto:finiteelementdesignsltd@gmail.com?subject=Job Inquiry: ${job.title}`;
                 }}
               >
                 Email Us About This Position
@@ -268,7 +268,7 @@ const JobDetail: React.FC = () => {
           <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 animate-fade-in">
             <h3 className="text-lg font-semibold text-fe-blue mb-3">How to Apply</h3>
             <p className="text-gray-700 mb-4">
-              Submit your application through our online form or email us directly at careers@finiteelementdesigns.com. 
+              Submit your application through our online form or email us directly at finiteelementdesignsltd@gmail.com. 
               Please include your resume, cover letter, and any relevant portfolio materials.
             </p>
             <p className="text-gray-700 text-sm">
