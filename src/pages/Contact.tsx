@@ -168,8 +168,8 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-medium text-fe-blue mb-1">Email</h3>
                       <p className="text-gray-700">
-                        <a href="mailto:info@finiteelementdesignsltd.com" className="hover:text-fe-teal transition-colors">
-                          info@finiteelementdesignsltd.com
+                        <a href="mailto:finiteelementdesignsltd@gmail.com" className="hover:text-fe-teal transition-colors">
+                          finiteelementdesignsltd@gmail.com
                         </a>
                       </p>
                     </div>

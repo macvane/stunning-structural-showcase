@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             <p className="mt-4 text-sm text-gray-300 max-w-xs">
               Leading structural engineering solutions with precision, innovation, and excellence.
             </p>
-            <div className="flex space-x-4 pt-4">
+            {/* <div className="flex space-x-4 pt-4">
               <a href="#" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">
                 <Facebook size={20} />
               </a>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               <a href="#" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">
                 <Instagram size={20} />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -103,8 +103,8 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-fe-orange flex-shrink-0" />
-                <a href="mailto:info@finiteelementdesignsltd.com" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">
-                  info@finiteelementdesignsltd.com
+                <a href="mailto:finiteelementdesignsltd@gmail.com" className="text-gray-300 hover:text-fe-orange transition-colors duration-300">
+                  finiteelementdesignsltd@gmail.com
                 </a>
               </li>
             </ul>
