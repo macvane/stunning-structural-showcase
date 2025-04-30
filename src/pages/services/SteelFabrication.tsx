@@ -11,7 +11,7 @@ const SteelFabrication = () => {
       title: "Experienced Fabrication Team",
       description: "At Finite Element Designs Limited, our fabrication team consists of highly trained and experienced professionals who are committed to delivering excellence in every project. With years of expertise in steel fabrication, our team possesses the technical know-how and attention to detail required to ensure that your structural components are fabricated to the highest standards of quality and precision.",
       icon: <Settings className="h-10 w-10 text-fe-teal" />,
-      image: "https://images.unsplash.com/photo-1565166843795-2500004c126a?q=80&w=1170&auto=format&fit=crop"
+      image: "https://i.pinimg.com/736x/5d/85/71/5d8571ee6dde2d9846783f50debb16be.jpg"
     },
     {
       title: "Customized Solutions",
@@ -23,7 +23,7 @@ const SteelFabrication = () => {
       title: "Quality Assurance",
       description: "Quality is at the forefront of everything we do at Finite Element Designs Limited. From the selection of materials to the final inspection of finished components, we adhere to stringent quality control processes to ensure that our steel fabrication meets or exceeds industry standards and codes. Our commitment to quality assurance guarantees that your fabricated components are built to last, withstand environmental factors, and perform reliably under demanding conditions.",
       icon: <CheckCircle className="h-10 w-10 text-fe-teal" />,
-      image: "https://images.unsplash.com/photo-1533558545376-85a58e2b9581?q=80&w=1174&auto=format&fit=crop"
+      image: "https://i.pinimg.com/736x/72/9e/17/729e1711cdd789a4070d241fc12a0694.jpg"
     },
     {
       title: "Compliance and Safety",
@@ -35,7 +35,7 @@ const SteelFabrication = () => {
       title: "Timely Delivery",
       description: "At Finite Element Designs Limited, we understand the importance of timely project delivery. Our streamlined fabrication processes, combined with efficient project management and logistics, enable us to meet even the tightest deadlines without compromising on quality. Whether you require just-in-time delivery or phased fabrication schedules, you can rely on us to deliver your steel components on time and within budget.",
       icon: <Timer className="h-10 w-10 text-fe-teal" />,
-      image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?q=80&w=1169&auto=format&fit=crop"
+      image: "https://i.pinimg.com/736x/c4/4f/d4/c44fd4487682f46e824f2ffb3bb0c9ac.jpg"
     }
   ];
 
@@ -79,9 +79,9 @@ const SteelFabrication = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?q=80&w=1170&auto=format&fit=crop" 
+                src="/v2 projects/image42.jpg" 
                 alt="Steel Fabrication" 
-                className="w-full h-full object-cover" 
+                className="w-full h-[28rem] object-cover" 
               />
             </div>
           </div>
@@ -113,7 +113,7 @@ const SteelFabrication = () => {
                     <img 
                       src={feature.image} 
                       alt={feature.title} 
-                      className="w-full h-full object-cover" 
+                      className="w-full h-[30rem] object-cover" 
                     />
                   </div>
                 </div>
@@ -159,8 +159,8 @@ const SteelFabrication = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { image: "https://images.unsplash.com/photo-1565166843795-2500004c126a?q=80&w=1170&auto=format&fit=crop", title: "Industrial Steel Framework" },
-              { image: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?q=80&w=1169&auto=format&fit=crop", title: "Commercial Building Structure" },
+              { image: "/v2 projects/image42.jpg", title: "Industrial Steel Framework" },
+              { image: "/v2 projects/image43.jpg", title: "Commercial Building Structure" },
               { image: "https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?q=80&w=1170&auto=format&fit=crop", title: "Steel Bridge Components" }
             ].map((project, index) => (
               <div 

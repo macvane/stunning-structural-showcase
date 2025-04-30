@@ -84,9 +84,9 @@ const CivilStructuralEngineering = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1170&auto=format&fit=crop" 
+                src="/v2 projects/image13.jpg" 
                 alt="Civil Engineering Project" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full lg:h-[30rem] object-cover object-top" 
               />
             </div>
           </div>
@@ -113,9 +113,9 @@ const CivilStructuralEngineering = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl lg:col-start-1">
               <img 
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1171&auto=format&fit=crop" 
+                src="/v2 projects/image36.jpg" 
                 alt="Civil Engineering Services" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full lg:h-[30rem] object-cover" 
               />
             </div>
           </div>

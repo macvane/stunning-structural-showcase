@@ -117,7 +117,7 @@ const StructuralConsultancy = () => {
       </section>
       
       {/* Project Gallery Section */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-fe-blue mb-10 text-center">Our Consultancy Projects</h2>
           
@@ -157,7 +157,7 @@ const StructuralConsultancy = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* CTA Section */}
       <section className="py-16 bg-fe-teal relative overflow-hidden">

@@ -105,9 +105,9 @@ const ProjectManagement = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1507537362848-9c7e70b7f5a1?q=80&w=1170&auto=format&fit=crop" 
+                src="/v2 projects/image10.jpg" 
                 alt="Project Management Team" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full md:h-[30rem] object-cover" 
               />
             </div>
           </div>

@@ -127,6 +127,20 @@ const Portfolio = () => {
       category: 'Commercial',
       location: 'Kakuma, Turkana',
       imageUrl: '/v2 projects/image17.jpg'
+    },
+    {
+      id: '16',
+      title: 'Maisonette Building',
+      category: 'Commercial',
+      location: 'Kisii',
+      imageUrl: '/v2 projects/image40.jpg'
+    },
+    {
+      id: '17',
+      title: 'Steel Tower Fabrication',
+      category: 'Commercial',
+      location: 'Nairobi',
+      imageUrl: '/v2 projects/image42.jpg'
     }
 
   ];

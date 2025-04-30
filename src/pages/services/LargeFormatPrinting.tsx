@@ -94,7 +94,7 @@ const LargeFormatPrinting = () => {
             </div>
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=1074&auto=format&fit=crop" 
+                src="https://i.pinimg.com/736x/0b/87/ac/0b87acc27f218a8a9d00c4c9be369842.jpg" 
                 alt="Large Format Printer" 
                 className="w-full h-full object-cover" 
               />
